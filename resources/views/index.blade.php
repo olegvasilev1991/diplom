@@ -5,8 +5,8 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
                 <script src="/js/underscore-min.js"></script>
-                <script>window.tobiz = {"project_id":"47031","rep_id":"66461","user_id":"7","owner_email":"guilty.warriors1@gmail.com","user_email":"manager1@tobiz.net","bs":true,"t":"4","w":1,"basket_conf":null}</script>
-        <link rel="stylesheet" type="text/css" href="/css/style.css?ver=1522672390">                <script type="text/javascript" src="/js/script.js?v=1522672961"></script>        <script type="text/javascript">tobiz.blocks = [];</script>
+                {{--<script>window.tobiz = {"project_id":"47031","rep_id":"66461","user_id":"7","owner_email":"guilty.warriors1@gmail.com","user_email":"manager1@tobiz.net","bs":true,"t":"4","w":1,"basket_conf":null}</script>--}}
+        <link rel="stylesheet" type="text/css" href="/css/style.css?ver=1522672390">                <script type="text/javascript" src="/js/script.js?v=1522672961"></script>       {{-- <script type="text/javascript">tobiz.blocks = [];</script>--}}
         
                 
                             <meta content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
@@ -16,14 +16,9 @@
                     <meta name="description" content="" />
             <meta name="keywords" content="" />
             <title></title>
-            
-                                
-                
-                
-                    
-        
 
-            <script type="text/javascript">
+
+           {{-- <script type="text/javascript">
                 $(function () {
                     $('body').on('submit', 'form[action="handler.php"]', function (event) {
                         event.preventDefault();
@@ -129,7 +124,7 @@
                         });
                     })
                 })
-            </script>
+            </script>--}}
 <style id="page_style">
 .section .title{font-family:El Messiri, sans-serif;}."\n"</style>
 
