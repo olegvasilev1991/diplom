@@ -127,7 +127,7 @@
             </script>--}}
 <style id="page_style">
 .section .title{font-family:El Messiri, sans-serif;}."\n"</style>
-
+        <script src='https://www.google.com/recaptcha/api.js'></script>
 
     
 </head>

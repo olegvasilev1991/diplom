@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('index');
 });
+
+Route::get('/admin', function () {
+    return view('admin.starter');
+});
+Route::get('/testt', 'TestController@index');
