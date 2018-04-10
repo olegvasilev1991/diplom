@@ -10,7 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/**
+ * @var \Illuminate\Routing\Router $router
+ */
+$router->auth();
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,7 +22,11 @@ Route::get('/test', function () {
     return view('index');
 });
 
-Route::get('/admin', function () {
+Route::get('/admin1', function () {
     return view('admin.starter');
 });
 Route::get('/testt', 'TestController@index');
+$router->get('/home', 'HomeController@index');
+$router->group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.'], function () use ($router) {
+    $router->get('/', 'TestController@index');
+});
