@@ -25,7 +25,7 @@ Route::get('/test', function () {
 Route::get('/admin1', function () {
     return view('admin.starter');
 });
-Route::get('/testt', 'TestController@index');
+
 $router->get('/home', 'HomeController@index');
 $router->group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.'], function () use ($router) {
     $router->get('/', 'TestController@index');
