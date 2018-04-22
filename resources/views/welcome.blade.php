@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Спортивне орієнтування11
+                    Спортивне орієнтування22
                 </div>
 
 
