@@ -2,7 +2,7 @@
 <html lang="ru-ru">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
                 <script src="/js/underscore-min.js"></script>
                 {{--<script>window.tobiz = {"project_id":"47031","rep_id":"66461","user_id":"7","owner_email":"guilty.warriors1@gmail.com","user_email":"manager1@tobiz.net","bs":true,"t":"4","w":1,"basket_conf":null}</script>--}}
@@ -209,7 +209,7 @@
 						</div>
 
 <div class="hide_line  section section226 " style="background-color:#FFFFFF;  background-image:url(/img/null.png);" data-id="508593" id="b_508593"><a name="anchor1"></a>
-							<div class="section_inner">
+							{{--<div class="section_inner">
 								<div class="title  ">Спортивное ориентирование</div>
 								<div class="sub_title  ">Что такое спортивное ориентирование?</div>
 								  
@@ -219,18 +219,18 @@
 										
                                                                                 <div class="txt1"><p>Некоторые современные виды спорта составлены из нескольких самостоятельных видов. Например, биатлон (стрельба, лыжные гонки), триатлон (бег, плавание, велосипед), или, скажем, современное пятиборье (бег, фехтование, стрельба, плавание и конный спорт).</p><p><br></p><p>&nbsp;Спортивное ориентирование не совсем такой вид спорта, ведь одна из его составляющих <span style="font-family:arial">–</span> ориентирование. Таким спортом ранее не занимались. Однако, бег по пересеченной и насыщенной различными географическими, биологическими, естественными и искусственными объектами местности с использованием компаса и карты.</p><p><br></p><p>Техника спортивного ориентирования представляет из себя не просто сумму техники отдельных компонентов. Фактически компоненты влияют друг на друга в такой сте­пени, что приходится говорить уже о новой технике более высокого уровня, чем техника отдельных компонентов.</p></div>
 										<div class="clear"></div>
-									</div> 
+									</div>
 								
-							</div>
+							</div>--}}
 						</div>
 
-<div class="hide_line   section section132 " style="background-color:#ffffff;  background-image:url(/img/null.png);" data-id="508594" id="b_508594"><a name="a_508594"></a>
+{{--<div class="hide_line   section section132 " style="background-color:#ffffff;  background-image:url(/img/null.png);" data-id="508594" id="b_508594"><a name="a_508594"></a>
 							<div class="section_inner">
 								<div class="title  ">Взаимовлияние местности</div>
 								<div class="sub_title  hidden   ">Рыбный текст</div>
 								<div class="text"><p>Техника бега ориентировщика сходна с техникой кроссового бега. Но не каждый кроссмен пробежит маркированную дистанцию ориентирования (не отвлекаясь на объекты) так же быстро, как ориентировщик такой же квалификации преодолеет дистанцию, характерную для кросса. Все дело в специальной технике бега по различной местности.</p><p><br></p><p><span style="font-family:arial">Ориентировщик встречает на трассе различные формы рельефа, типа грунта, отчего у него формируется гибкий стиль бега, который не очень годится для стадиона, но зато позволяет сохранять скорость, как на болоте, так и на крутом склоне. Его мышцы, связки, вестибулярный аппарат приспособлены к этому.</span></p></div>
 							</div>
-						</div>
+						</div>--}}
 
 <div class="hide_line  section   section128  " style="background-color:#ffffff;  background-image:url(/img/null.png);" data-id="508595" id="b_508595"><a name="a_508595"></a>
 							<div class="section_inner">
@@ -266,7 +266,7 @@
 
 										</div>
 										<div class="clear"></div>
-                                                                                <div class="extra_info_block_wrapper">
+                                                                              {{--  <div class="extra_info_block_wrapper">
                                                                                     <div class="extra_info_block">
                                                                                         <div class="close">Х</div>    
                                                                                         <div class="left"><img src="/img/400x400/image_247.jpg" alt="">
@@ -280,8 +280,8 @@
                                                                                         <div class="clear"></div>
                                                                                             
                                                                                     </div>
-                                                                                </div>
-                                                                                <div class="extra_info_block_wrapper">
+                                                                                </div>--}}
+                                                                                {{--<div class="extra_info_block_wrapper">
                                                                                     <div class="extra_info_block">
                                                                                         <div class="close">Х</div>
                                                                                         <div class="left"><img src="/img/400x400/image_220.jpg" alt="">
@@ -295,8 +295,8 @@
                                                                                         <div class="clear"></div>
                                                                                             
                                                                                     </div>
-                                                                                </div>
-                                                                                <div class="extra_info_block_wrapper">
+                                                                                </div>--}}
+                                                                                {{--<div class="extra_info_block_wrapper">
                                                                                     <div class="extra_info_block">
                                                                                         <div class="close">Х</div>
                                                                                         <div class="left"><img src="/img/400x400/image_286.jpg" alt="">
@@ -311,21 +311,21 @@
                                                                                         <div class="clear"></div>    
                                                                                             
                                                                                     </div>
-                                                                                </div>
+                                                                                </div>--}}
 									</div> 
-									<div class="popup_thanks">
+								{{--	<div class="popup_thanks">
                         <div class="popup_thanks_inner">
                             <div class="popup_thanks_close">X</div>
                             <div class="popup_thanks_title">Спасибо за заявку!</div>
                             <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
                         </div>
-                    </div>
+                    </div>--}}
                 
 								
 							</div>
 						</div>
 
-<div class="hide_line  section section307 " style="background-color:#FFFFFF;  background-image:url(/img/null.png);" data-id="508610" id="b_508610"><a name="anchor1"></a>
+{{--<div class="hide_line  section section307 " style="background-color:#FFFFFF;  background-image:url(/img/null.png);" data-id="508610" id="b_508610"><a name="anchor1"></a>
                         <div class="section_inner">
                                 <div class="title  ">Абонементы и цены</div>
                                 <div class="sub_title  ">Ниже представлена информация о ценах:</div>
@@ -480,7 +480,7 @@
                 
                                     
                         </div>
-                </div>
+                </div>--}}
 
 <div class="hide_line section section164  " style="background-color:#ffffff;  background-image:url(/img/null.png);" data-id="508613" id="b_508613"><a name="a_508613"></a>
 							<div class="section_inner ">
@@ -661,11 +661,6 @@
 						</div></div>
 
         </div>
-            
-            
-        
-                                    
-            
-            
+
     </body>
 </html>
