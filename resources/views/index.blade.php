@@ -209,7 +209,7 @@
 						</div>
 
 <div class="hide_line  section section226 " style="background-color:#FFFFFF;  background-image:url(/img/null.png);" data-id="508593" id="b_508593"><a name="anchor1"></a>
-							{{--<div class="section_inner">
+							{{--<div class="section_inner">  
 								<div class="title  ">Спортивное ориентирование</div>
 								<div class="sub_title  ">Что такое спортивное ориентирование?</div>
 								  
