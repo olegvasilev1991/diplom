@@ -14,11 +14,11 @@
  * @var \Illuminate\Routing\Router $router
  */
 $router->auth();
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
-Route::get('/test', function () {
+$router->get('/', function () {
     return view('index');
 });
 
