@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+{{--@extends('admin.layouts.admin_template)--}}
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
