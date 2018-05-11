@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru-ru">
     <head>
+		<link rel="stylesheet" href="/css/flipclock.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="/js/flipclock.js"></script>
+
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -16,6 +20,33 @@
                     <meta name="description" content="" />
             <meta name="keywords" content="" />
             <title></title>
+
+		{{--сlock--}}
+
+		<script type="text/javascript">
+            var clock;
+
+            $(document).ready(function() {
+                var clock;
+
+                clock = $('.clock').FlipClock({
+                    clockFace: 'DailyCounter',
+                    autoStart: false,
+                    callbacks: {
+                        stop: function() {
+                            $('.message').html('The clock has stopped!')
+                        }
+                    }
+                });
+                clock.setCountdown(true);
+                clock.setTime(1009);
+
+                clock.start();
+
+            });
+		</script>
+
+
 
 
            {{-- <script type="text/javascript">
@@ -132,6 +163,10 @@
     
 </head>
 <body class="editor_false">
+
+<div class="clock" style="margin:2em;"></div>
+<div class="message"></div>
+
         <div id="wrapper">
 <div class="hide_line  section section107  " style="background-color:#ffffff;  background-image:url(/img/null.png);" data-id="508574" id="b_508574"><a name="a_508574"></a>
                                     <div class="section_inner">
@@ -172,8 +207,10 @@
                                     </div>
                             </div>
 
+
 <div class="section section153   fixed " style="background-color:#ffffff; background-image:url(/storage/image/fon.jpg);" data-id="508575" id="b_508575"><a name="a_508575"></a>
-							
+
+
 							<div class="dark"></div>
 							<div class="noise" style="background-image:url(/img/null.png);"></div>
 							<div class="section_inner  big   ">
@@ -577,21 +614,21 @@
 											<div class="image2  border   shadow  "><img src="/storage/image/image_85.jpg" alt=""></div>
 											<div class="overlay_image_box ">
 												<div class="overlay_image_title title2">івалді</div>
-												<div class="overlay_image_subtitle subtitle2">Хрень</div>
+												<div class="overlay_image_subtitle subtitle2">TEST</div>
 											</div>
 										</div>
                                                                                 <div class="clear480"></div>
 										<div class="col_4">
 											<div class="image3  border   shadow  "><img src="/storage/image/image_55.jpg" alt=""></div>
 											<div class="overlay_image_box ">
-												<div class="overlay_image_title title3">Пизда</div>
-												<div class="overlay_image_subtitle subtitle3">Хрень</div>
+												<div class="overlay_image_title title3">TEST</div>
+												<div class="overlay_image_subtitle subtitle3">TEST</div>
 											</div>
 										</div>
 										<div class="col_4 last">
 											<div class="image4  border   shadow  "><img src="/storage/image/image_41.jpg" alt=""></div>
 											<div class="overlay_image_box ">
-												<div class="overlay_image_title title4">Хуйло</div>
+												<div class="overlay_image_title title4">TEST</div>
 												<div class="overlay_image_subtitle subtitle4">TEST</div>
 											</div>
 										</div>
