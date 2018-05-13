@@ -18,9 +18,7 @@ $router->auth();
     return view('welcome');
 });*/
 
-$router->get('/', function () {
-    return view('index');
-});
+$router->get('/', 'TournamentController@Index');
 
 Route::get('/admin1', function () {
     return view('admin.starter');
@@ -28,5 +26,6 @@ Route::get('/admin1', function () {
 
 $router->get('/home', 'HomeController@index');
 $router->group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.'], function () use ($router) {
-    $router->get('/', 'IndexController@index');//->name('admin_index');
+    $router->get('/', 'IndexController@index')->name('index');
+    $router->get('/tournaments', 'TournamentsController@index')->name('tournaments');
 });

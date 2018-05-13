@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru-ru">
     <head>
-		<link rel="stylesheet" href="/css/flipclock.css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="/js/flipclock.min.js"></script>
+
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-                <script src="/js/underscore-min.js"></script>
-                {{--<script>window.tobiz = {"project_id":"47031","rep_id":"66461","user_id":"7","owner_email":"guilty.warriors1@gmail.com","user_email":"manager1@tobiz.net","bs":true,"t":"4","w":1,"basket_conf":null}</script>--}}
+		<script src="/js/underscore-min.js"></script>
+
         <link rel="stylesheet" type="text/css" href="/css/style.css?ver=1522672390">                <script type="text/javascript" src="/js/script.js?v=1522672961"></script>       {{-- <script type="text/javascript">tobiz.blocks = [];</script>--}}
         
                 
-                            <meta content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
-            <link href="/css/mobile.css" rel="stylesheet">
-                    
+
+		<link href="/css/mobile.css" rel="stylesheet">
+		<link rel="stylesheet" href="/css/flipclock.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="/js/flipclock.js"></script>
         
-                    <meta name="description" content="" />
-            <meta name="keywords" content="" />
+
             <title></title>
-
-		{{--сlock--}}
-
 		<script type="text/javascript">
             var clock;
 
@@ -32,130 +28,21 @@
                 clock = $('.clock').FlipClock({
                     clockFace: 'DailyCounter',
                     autoStart: false,
+					language:'ru',
                     callbacks: {
                         stop: function() {
-                            $('.message').html('The clock has stopped!')
+                            $('.message').html('Турнір закінчився')
                         }
                     }
                 });
                 clock.setCountdown(true);
-                clock.setTime(1009);
+                clock.setTime({{ $time }});
 
                 clock.start();
 
             });
 		</script>
 
-
-
-
-           {{-- <script type="text/javascript">
-                $(function () {
-                    $('body').on('submit', 'form[action="handler.php"]', function (event) {
-                        event.preventDefault();
-                        var this_form = $(this);
-                        if (!$(this).children("input[name=project_id]").length)
-                            $(this).prepend('<input type="hidden" name="project_id" value="' + window.tobiz.project_id + '">');
-                        if (!$(this).children("input[name=page_id]").length)
-                            $(this).prepend('<input type="hidden" name="page_id" value="' + window.tobiz.rep_id + '">');
-                        if (!$(this).children("input[name=referrer]").length)
-                            $(this).prepend('<input type="hidden" name="referrer" value="' + document.referrer + '">');
-                        if (!$(this).children("input[name=user_id]").length)
-                            $(this).prepend('<input type="hidden" name="user_id" value="' + window.tobiz.user_id + '">');
-
-                        if ($(this).find("[data-action]").size()) {
-                            console.log(123);
-                            $(this).prepend('<input type="hidden" name="action" value="' + $(this).find("[data-action]").data('action') + '">');
-                            $(this).prepend('<input type="hidden" name="amount" value="' + $(this).find("[data-action]").data('amount') + '">');
-                            $(this).prepend('<input type="hidden" name="url" value="' + $(this).find("[data-action]").data('url') + '">');
-                        } else {
-                            console.log('not found');
-                        }
-                        var formData = new FormData($(this)[0]);
-                        var this_block = $(this).closest('.section');
-                        $.ajax({
-                            dataType: "json",
-                            type: "POST",
-                            url: "/handler.php",
-                            data: formData,
-                            async: false,
-                            cache: false,
-                            contentType: false,
-                            processData: false
-                        }).done(function (data) {
-                            if (data.status == 'OK') {
-                                alert(data.msg);
-                                this_form.each(function () {
-                                    $(this)[0].reset();
-                                })
-                                $('.popup_form').hide();
-                            }
-                            if (data.status == 'ERROR') {
-                                alert(data.msg);
-                            }
-                            if (data.status == 'JC') {
-                                        $('body').append(data.form);
-                                $('#jc_form').submit();
-                                this_form.each(function () {
-                                    $(this)[0].reset();
-                                })
-                            }
-                            if (data.status == 'SR') {
-                                        $('body').append(data.form);
-                                $('#sr_form').submit();
-                                this_form.each(function () {
-                                    $(this)[0].reset();
-                                })
-                            }
-                            if (data.status == 'GR') {
-                                        $('body').append(data.form);
-                                $('#gr_form').submit();
-                                this_form.each(function () {
-                                    $(this)[0].reset();
-                                })
-                            }
-                            if (data.status == 'RK') {
-                                        this_form.each(function () {
-                                    $(this)[0].reset();
-                                })
-                                window.location.href = data.url;
-                            }
-                            if (data.status == 'redirect') {
-                                        this_form.each(function () {
-                                    $(this)[0].reset();
-                                })
-
-
-                                window.location.href = data.url;
-                            }
-                            if (data.status == 'thanks') {
-                                        this_block.find('.popup_thanks').show();
-                                this_form.each(function () {
-                                    $(this)[0].reset();
-                                })
-                                $('.popup_form').hide();
-                                this_block.find('.extra_info_block_wrapper').hide();
-                            }
-                            if (data.status == 'thanks_order_complete') {
-                                        this_block.find('.popup_thanks').show();
-                                this_form.each(function () {
-                                    $(this)[0].reset();
-                                })
-                                window.basket.clean();
-                                window.basket.hideForm();
-                                window.basket.renderForm();
-                                window.basket.renderBtn();
-                                window.basket.hideBtn();
-                                alert('Спасибо ваш заказ успешно оформлен!');
-                                $('.popup_form').hide();
-                            }
-                        }).error(function (xhr, ajaxOptions, thrownError) {
-                            console.log(xhr.status);
-                            console.log(thrownError)
-                        });
-                    })
-                })
-            </script>--}}
 <style id="page_style">
 .section .title{font-family:El Messiri, sans-serif;}."\n"</style>
         <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -164,8 +51,7 @@
 </head>
 <body class="editor_false">
 
-<div class="clock" style="margin:2em;"></div>
-<div class="message"></div>
+
 
         <div id="wrapper">
 <div class="hide_line  section section107  " style="background-color:#ffffff;  background-image:url(/img/null.png);" data-id="508574" id="b_508574"><a name="a_508574"></a>
@@ -246,6 +132,14 @@
 						</div>
 
 <div class="hide_line  section section226 " style="background-color:#FFFFFF;  background-image:url(/img/null.png);" data-id="508593" id="b_508593"><a name="anchor1"></a>
+    @if(empty($active))
+    <div class="title  ">Наступний турнір через</div>
+    @else
+        <div class="title message">До закінчення турніру</div>
+    @endif
+	<div class="clock" style="margin: 0 auto; max-width: 623px;margin-top: 5em;"></div>
+</div>
+            <div class="message" style="text-align: center"></div>
 							{{--<div class="section_inner">  
 								<div class="title  ">Спортивное ориентирование</div>
 								<div class="sub_title  ">Что такое спортивное ориентирование?</div>

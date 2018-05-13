@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Tournament;
 
 class TournamentsController extends Controller
 {
@@ -14,7 +15,9 @@ class TournamentsController extends Controller
      */
     public function index()
     {
-        //
+        $data['tournaments'] = Tournament::all();
+
+        return view('admin.tournaments',['page_title' => 'Турніри'])->with($data);
     }
 
     /**

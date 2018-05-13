@@ -2710,10 +2710,10 @@ var FlipClock;
   FlipClock.Lang.Russian = {
 
     'years'   : 'лет',
-    'months'  : 'месяцев',
-    'days'    : 'дней',
-    'hours'   : 'часов',
-    'minutes' : 'минут',
+    'months'  : 'місяців',
+    'days'    : 'днів',
+    'hours'   : 'годин',
+    'minutes' : 'хвилин',
     'seconds' : 'секунд'
 
   };

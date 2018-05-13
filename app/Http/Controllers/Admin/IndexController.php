@@ -36,6 +36,7 @@ class IndexController extends Controller
                 'color' => 'success'
             ]
         ];
+
         return view('admin.index')->with($data);
     }
 }
