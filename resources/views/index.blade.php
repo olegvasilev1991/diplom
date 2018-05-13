@@ -3,7 +3,7 @@
     <head>
 		<link rel="stylesheet" href="/css/flipclock.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="/js/flipclock.js"></script>
+		<script src="/js/flipclock.min.js"></script>
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
@@ -178,7 +178,7 @@
                                             <div class="menu-and-phone-and-btn">
                                                             <div class="btn1 surround  " style="background-color:#3F7B16;  border-radius: 0.3em;   box-shadow: 0; ">Зателефонуйте мені</div>
                                                             <div class="menu1">
-                                                                    <ul><li><a href="#anchor1" title="О НАС">Про сайт</a></li><li><a href="#anchor3" title="ТЕСТ">тест</a></li><li><a href="#anchor4" title="Контакти">Контакти</a></li></ul>
+                                                                    <ul><li><a href="#anchor1" title="О НАС">Про сайт</a></li><li><a href="#anchor3" title="турнірна таблиця">Турнірна таблиця</a></li><li><a href="#anchor4" title="Контакти">Контакти</a></li></ul>
                                                             </div>
                                                             <div class="phone1 ">+380978196656</div>
                                                             <div class="clear"></div>
@@ -220,7 +220,7 @@
 								<div class="sub_title  "><p>Кваліфікаційна робота студента групи І-14</p></div>
 								
 									<div class="btn1 surround  " style="background-color:#3F7B16;  border-radius: 0.3em;   box-shadow: 0; ">Заявка для участі</div>
-									<div class="btn_descr">тесттест<br></div>
+
 								</div>
 								
                                                                         <div class="popup_form">
@@ -524,7 +524,7 @@
 								<div class="col pcenter">
 									<div class="sub_title  ">За будь-яким питанням звертайтейсь за телефоном +380978196656 або за електронною адресою oleg.vasilev1991@gmail.com</div>
 									<div class="btn1 surround  " style="background-color:#3F7B16;  border-radius: 0.3em;   box-shadow: 0; ">Оставить заявку</div>
-									<div class="btn_descr  ">блаблабла</div>
+
 								</div>
 								<div class="clear"></div>
                                                                 
@@ -557,35 +557,35 @@
 								  
 									<div class="arr1">
 										<div class="image_box1  border   shadow  ">
-											<img src="/img/460x350/edf8d95aad6b2b3aa5978cf667e88cb8.jpg" alt="">
+											<img src="/storage/image/galery/3.JPG" alt="">
 											<div class="overlay_image_box" data-link="">
 												<div class="overlay_image_title"></div>
 												<div class="overlay_image_descr"></div>
 											</div>
 										</div>
 										<div class="image_box2  border   shadow  ">
-											<img src="/img/220x165/61a286edfe53666f54092931c6a406e8.jpg" alt="">
+											<img src="/storage/image/galery/4.JPG" alt="">
 											<div class="overlay_image_box" data-link="">
 												<div class="overlay_image_title"></div>
 												<div class="overlay_image_descr"></div>
 											</div>
 										</div>
 										<div class="image_box3  border   shadow  ">
-											<img src="/img/220x165/a6db7d7ae173c202fe7c8c11912bd0ed.jpg" alt="">
+											<img src="/storage/image/galery/5.JPG" alt="">
 											<div class="overlay_image_box" data-link="">
 												<div class="overlay_image_title"></div>
 												<div class="overlay_image_descr"></div>
 											</div>
 										</div>
 										<div class="image_box4  border   shadow  ">
-											<img src="/img/220x165/0aa1679940bbb524d11e0984e2b18950.jpg" alt="">
+											<img src="/storage/image/galery/6.JPG" alt="">
 											<div class="overlay_image_box" data-link="">
 												<div class="overlay_image_title"></div>
 												<div class="overlay_image_descr"></div>
 											</div>
 										</div>
 										<div class="image_box5  border   shadow  ">
-											<img src="/img/220x165/cd3174e0de512ccef18c773754097d8b.jpg" alt="">
+											<img src="/storage/image/galery/8.JPG" alt="">
 											<div class="overlay_image_box" data-link="">
 												<div class="overlay_image_title"></div>
 												<div class="overlay_image_descr"></div>
@@ -604,32 +604,32 @@
 								  
 									<div class="arr1">
 										<div class="col_4">
-											<div class="image1  border   shadow  "><img src="/storage/image/image_69.jpg" alt=""></div>
+											<div class="image1  border   shadow  "><img src="/storage/image/1.JPG" alt=""></div>
 											<div class="overlay_image_box ">
-												<div class="overlay_image_title title1">sdlfjsld</div>
-												<div class="overlay_image_subtitle subtitle1">sldkfjlsdjflsdf</div>
+												<div class="overlay_image_title title1">Олег Васильєв</div>
+												<div class="overlay_image_subtitle subtitle1">Адміністратор сайту</div>
 											</div>
 										</div>
 										<div class="col_4">
-											<div class="image2  border   shadow  "><img src="/storage/image/image_85.jpg" alt=""></div>
+											<div class="image2  border   shadow  "><img src="/storage/image/2.png" alt=""></div>
 											<div class="overlay_image_box ">
-												<div class="overlay_image_title title2">івалді</div>
-												<div class="overlay_image_subtitle subtitle2">TEST</div>
+												<div class="overlay_image_title title2">Місце вакантне</div>
+												<div class="overlay_image_subtitle subtitle2">Судя</div>
 											</div>
 										</div>
                                                                                 <div class="clear480"></div>
 										<div class="col_4">
-											<div class="image3  border   shadow  "><img src="/storage/image/image_55.jpg" alt=""></div>
+											<div class="image3  border   shadow  "><img src="/storage/image/2.png" alt=""></div>
 											<div class="overlay_image_box ">
-												<div class="overlay_image_title title3">TEST</div>
-												<div class="overlay_image_subtitle subtitle3">TEST</div>
+												<div class="overlay_image_title title3">Місце вакантне</div>
+												<div class="overlay_image_subtitle subtitle3">Судя</div>
 											</div>
 										</div>
 										<div class="col_4 last">
-											<div class="image4  border   shadow  "><img src="/storage/image/image_41.jpg" alt=""></div>
+											<div class="image4  border   shadow  "><img src="/storage/image/2.png" alt=""></div>
 											<div class="overlay_image_box ">
-												<div class="overlay_image_title title4">TEST</div>
-												<div class="overlay_image_subtitle subtitle4">TEST</div>
+												<div class="overlay_image_title title4">Місце вакантне</div>
+												<div class="overlay_image_subtitle subtitle4">Судя</div>
 											</div>
 										</div>
 										<div class="clear"></div>
@@ -675,7 +675,6 @@
 							<div class="section_inner">
 								<div class="title  ">Мої контакти</div>
 								<div class="sub_title  "><p style="text-align: left;">м.Кривий Ріг<br>Телефон: +380978196656<br>Електронна адреса oleg.vasilev1991@gmail.com</p></div>
-								Пока думаю...
 								<div class="text  hidden  ">Контактна інформація</div>
 								<div class="clear"></div>
 							</div>

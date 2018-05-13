@@ -15,13 +15,13 @@ class CreateParticipantsTable extends Migration
     {
         Schema::create('participants', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_card');
+            $table->integer('id_card')->nullable();
             $table->char('first_name');
             $table->char('last_name');
             $table->date('birth');
             $table->char('phone',50);
             $table->char('email',50);
-            $table->date('sex');
+            $table->boolean('sex');
             $table->char('photo',50);
             $table->timestamps();
         });
