@@ -2,35 +2,6 @@
 
 @section('admin.content')
     <div class='row'>
-        <div class='col-md-6'>
-            <!-- Box -->
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Randomly Generated Tasks</h3>
-                    <div class="box-tools pull-right">
-                        <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
-                        <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
-                    </div>
-                </div>
-                <div class="box-body">
-                    <table>
-                    @foreach($tournaments as $tournament)
-
-                            {{ $tournament['name'] }}
-                            {{ $tournament['start'] }}
-                            {{ $tournament['finish'] }}
-                            {{ $tournament['points'] }}
-
-                    @endforeach
-                    </table>
-                </div><!-- /.box-body -->
-                <div class="box-footer">
-                    <form action='#'>
-                        <input type='text' placeholder='New task' class='form-control input-sm' />
-                    </form>
-                </div><!-- /.box-footer-->
-            </div><!-- /.box -->
-        </div><!-- /.col -->
         <div class='col-md-12'>
             <!-- Box -->
             <div class="box box-primary">
@@ -42,10 +13,53 @@
                     </div>
                 </div>
                 <div class="box-body">
-                    A separate section to add any kind of widget. Feel free
-                    to explore all of AdminLTE widgets by visiting the demo page
-                    on <a href="https://almsaeedstudio.com">Almsaeed Studio</a>.
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">№</th>
+                            <th scope="col">Назва</th>
+                            <th scope="col">Початок турніру</th>
+                            <th scope="col">Закінчення турніру</th>
+                            <th scope="col">Кількість контрольних пунктів</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($tournaments as $tournament)
+                                <tr>
+                                    <th>{{ $tournament['id'] }}</th>
+                                    <td>{{ $tournament['name'] }}</td>
+                                    <td>{{ $tournament['start'] }}</td>
+                                    <td>{{ $tournament['finish'] }}</td>
+                                    <td> {{ $tournament['points'] }}</td>
+                                </tr>
+                        @endforeach
+                        <tr>
+                            <th></th>
+
+                            <form action='{{ route('admin.tournaments.store') }}' method="post">
+                                @csrf
+                                <th><input type='text' name="name" placeholder='Назва' class='form-control input-sm'/></th>
+                                <th><input type='datetime-local' name="start" placeholder='Початок турніру' class='form-control input-sm'/></th>
+                                <th><input type='time' name="finish" placeholder='Закінчення турніру' class='form-control input-sm'/></th>
+                                <th><input type='text' name="points" placeholder='Кількість контрольних пунктів' class='form-control input-sm'/></th>
+                        </tr>
+
+                        </tbody>
+                    </table>
                 </div><!-- /.box-body -->
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary mb-2">Додати</button>
+                    </form>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                </div><!-- /.box-footer-->
             </div><!-- /.box -->
         </div><!-- /.col -->
 

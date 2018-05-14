@@ -18,10 +18,11 @@ class TournamentController extends Controller
         if($time_finish < 0){
             $data['time'] = 0;
             return view('index', $data);
-        }
-        if($time_start < 0){
+        }else if($time_start < 0){
             $data['time'] = $time_finish;
             $data['active'] = true;
+        } else{
+            $data['time'] = $time_start;
         }
         //dd($data,now());
         return view('index', $data);

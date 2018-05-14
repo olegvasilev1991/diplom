@@ -38,7 +38,18 @@ class TournamentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'name' => 'required',
+                'start' => 'required',
+                'finish' => 'required',
+                'points' => 'required',
+            ]
+        );
+        $data = $request->all();
+
+        dd($data);
+        //return 'test';
     }
 
     /**
@@ -49,7 +60,7 @@ class TournamentsController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
