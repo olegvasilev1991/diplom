@@ -29,4 +29,5 @@ $router->group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'adm
     $router->get('/', 'IndexController@index')->name('index');
    // $router->resource('/', 'TournamentsController');//->name('index');
     $router->resource('tournaments', 'TournamentsController');//->name('tournaments');
+    $router->resource('participants','ParticipantsController');
 });

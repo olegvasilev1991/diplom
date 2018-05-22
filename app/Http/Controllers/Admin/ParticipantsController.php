@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Participant;
 
 class ParticipantsController extends Controller
 {
@@ -13,7 +15,14 @@ class ParticipantsController extends Controller
      */
     public function index()
     {
-        //
+        $data['participants'] = Participant::all();
+        if($data['participants'][0]['sex'] == 0){
+            $data['participants'][0]['sex'] = 'чоловіча';
+        } else{
+            $data['participants'][0]['sex'] = 'жіноча';
+        }
+        //dd($data['participants'][0]['sex']);
+        return view('admin.participants',['page_title' => 'Учасники'])->with($data);
     }
 
     /**
