@@ -12,42 +12,59 @@
                         <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
                     </div>
                 </div>
+                <form action='{{ route('admin.tournaments.store') }}' method="post">
+                    @csrf
                 <div class="box-body">
                     <table class="table">
                         <thead>
-                        <tr>
-                            <th scope="col">№</th>
-                            <th scope="col">Прізвище</th>
-                            <th scope="col">Ім'я</th>
-                            <th scope="col">Дата народження</th>
-                            <th scope="col">Телефон</th>
-                            <th scope="col">Стать</th>
-                            <th scope="col"></th>
-                        </tr>
                         </thead>
                         <tbody>
-                        @foreach($participants as $participant)
-                                <tr>
-                                    <th>{{ $participant['id'] }}</th>
-                                    <td>{{ $participant['last_name'] }}</td>
-                                    <td>{{ $participant['first_name'] }}</td>
-                                    <td>{{ $participant['birth'] }}</td>
-                                    <td> {{ $participant['phone'] }}</td>
-                                    <td> {{ $participant['sex'] }}</td>
-                                    <td><a href="{{ route('admin.participants.edit',$participant['id']) }}"><button>Редагувати</button></a></td>
-                                </tr>
-                        @endforeach
                         <tr>
-                            <th></th>
-
-                            <form action='{{ route('admin.tournaments.store') }}' method="post">
-                                @csrf
-                                <th><input type='text' name="name" placeholder='Прізвище' class='form-control input-sm'/></th>
-                                <th><input type='datetime-local' name="start" placeholder='Ім`я' class='form-control input-sm'/></th>
-                                <th><input type='time' name="finish" placeholder='Дата народження' class='form-control input-sm'/></th>
-                                <th><input type='text' name="points" placeholder='Номер телефону' class='form-control input-sm'/></th>
-                                <th><input type='text' name="points" placeholder='стать' class='form-control input-sm'/></th>
+                            <th scope="col">Фото</th>
                         </tr>
+                        <tr>
+                            <th scope="col">ID-card</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Прізвище</th>
+                            <th><input type='text' name="name" placeholder='Прізвище' class='form-control input-sm'/></th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Ім'я</th>
+                            <th>
+                                <input type='datetime-local' name="start" placeholder='Ім`я' class='form-control input-sm'/>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Дата народження</th>
+                            <th>
+                                <input type='time' name="finish" placeholder='Дата народження' class='form-control input-sm'/>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col">E-mail</th>
+                            <th>
+                                <input type='text' name="points" placeholder='E-mail' class='form-control input-sm'/>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Телефон</th>
+                            <th>
+                                <input type='text' name="points" placeholder='Номер телефону' class='form-control input-sm'/>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Стать</th>
+                            <th>
+                                <input type='text' name="points" placeholder='стать' class='form-control input-sm'/>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col"></th>
+                        </tr>
+
+
+
 
                         </tbody>
                     </table>

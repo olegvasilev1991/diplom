@@ -65,7 +65,9 @@ class ParticipantsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Participant::find($id);
+       // dd($data);
+        return view('admin.participant_create_edit',['page_title' => 'Редагування учасника']);
     }
 
     /**
