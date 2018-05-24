@@ -12,7 +12,11 @@
                         <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
                     </div>
                 </div>
+                @if($participant->id)
                 <form action='{{ route('admin.tournaments.store') }}' method="post">
+                    @else
+                        <form action='{{ route('admin.tournaments.update') }}' method="post">
+                        @endif
                     @csrf
                 <div class="box-body">
                     <table class="table">
@@ -20,31 +24,32 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <th scope="col">Фото</th>
+                            <th colspan="2"><center>Фото</center></th>
                         </tr>
                         <tr>
                             <th scope="col">ID-card</th>
+                            <th><input type='text' name="name" placeholder='ID-card' class='form-control input-sm'/></th>
                         </tr>
                         <tr>
                             <th scope="col">Прізвище</th>
-                            <th><input type='text' name="name" placeholder='Прізвище' class='form-control input-sm'/></th>
+                            <th><input type='text' name="name" value="{{ $participant->first_name }}" placeholder='Прізвище' class='form-control input-sm'/></th>
                         </tr>
                         <tr>
                             <th scope="col">Ім'я</th>
                             <th>
-                                <input type='datetime-local' name="start" placeholder='Ім`я' class='form-control input-sm'/>
+                                <input type='text' name="start" placeholder='Ім`я' class='form-control input-sm'/>
                             </th>
                         </tr>
                         <tr>
                             <th scope="col">Дата народження</th>
                             <th>
-                                <input type='time' name="finish" placeholder='Дата народження' class='form-control input-sm'/>
+                                <input type='date' name="finish" placeholder='Дата народження' class='form-control input-sm'/>
                             </th>
                         </tr>
                         <tr>
                             <th scope="col">E-mail</th>
                             <th>
-                                <input type='text' name="points" placeholder='E-mail' class='form-control input-sm'/>
+                                <input type='email' name="points" placeholder='E-mail' class='form-control input-sm'/>
                             </th>
                         </tr>
                         <tr>
@@ -56,7 +61,10 @@
                         <tr>
                             <th scope="col">Стать</th>
                             <th>
-                                <input type='text' name="points" placeholder='стать' class='form-control input-sm'/>
+                                <select>
+                                    <option>Чоловіча</option>
+                                    <option>Жіноча</option>
+                                </select>
                             </th>
                         </tr>
                         <tr>

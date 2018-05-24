@@ -67,7 +67,8 @@ class ParticipantsController extends Controller
     {
         $data = Participant::find($id);
        // dd($data);
-        return view('admin.participant_create_edit',['page_title' => 'Редагування учасника']);
+        return view('admin.participant_create_edit',['page_title' => 'Редагування учасника',
+            'participant'=>$data]);
     }
 
     /**
@@ -79,7 +80,7 @@ class ParticipantsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd('test');
     }
 
     /**
