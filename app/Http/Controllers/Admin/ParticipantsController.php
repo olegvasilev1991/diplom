@@ -16,13 +16,9 @@ class ParticipantsController extends Controller
     public function index()
     {
         $data['participants'] = Participant::all();
-        if($data['participants'][0]['sex'] == 0){
-            $data['participants'][0]['sex'] = 'чоловіча';
-        } else{
-            $data['participants'][0]['sex'] = 'жіноча';
-        }
+
         //dd($data['participants'][0]['sex']);
-        return view('admin.participants',['page_title' => 'Учасники'])->with($data);
+        return view('admin.participants.index',['page_title' => 'Учасники'])->with($data);
     }
 
     /**
@@ -32,7 +28,12 @@ class ParticipantsController extends Controller
      */
     public function create()
     {
-        //
+        $data = new Participant();
+        //dd($data);
+        return view('admin.participants.create_edit',[
+            'page_title' => 'Зареєструвати учасника',
+            'participant' => $data
+        ]);
     }
 
     /**
@@ -43,7 +44,10 @@ class ParticipantsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Participant();
+        $data->create($request->all());
+
+        return redirect('/admin/participants');
     }
 
     /**
@@ -66,9 +70,10 @@ class ParticipantsController extends Controller
     public function edit($id)
     {
         $data = Participant::find($id);
-       // dd($data);
-        return view('admin.participant_create_edit',['page_title' => 'Редагування учасника',
-            'participant'=>$data]);
+        //dd($data);
+        return view('admin.participants.create_edit',[
+            'page_title' => 'Редагування учасника',
+            'participant' => $data]);
     }
 
     /**
@@ -80,7 +85,11 @@ class ParticipantsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd('test');
+        $participant = Participant::find($id);
+        $data = $request->all();
+
+        $participant->update($data);
+        return redirect('/admin/participants');
     }
 
     /**

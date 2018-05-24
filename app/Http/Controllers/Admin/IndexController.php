@@ -16,7 +16,7 @@ class IndexController extends Controller
         $time_finish = strtotime($data[0]->finish)-strtotime(now());
         if($time_finish < 0){
             $data['time'] = 0;
-            return view('index', $data);
+            return view('admin.index', $data);
         }else if($time_start < 0){
             $data['time'] = $time_finish;
             $data['active'] = true;

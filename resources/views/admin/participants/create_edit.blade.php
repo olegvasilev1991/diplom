@@ -13,72 +13,70 @@
                     </div>
                 </div>
                 @if($participant->id)
-                <form action='{{ route('admin.tournaments.store') }}' method="post">
+                    <form action='{{ route('admin.participants.update',[$participant->id]) }}' method="post">
+                        @csrf
+                        @method('PUT')
                     @else
-                        <form action='{{ route('admin.tournaments.update') }}' method="post">
+                            <form action='{{ route('admin.participants.store') }}' method="post">
+                                @csrf
                         @endif
-                    @csrf
                 <div class="box-body">
                     <table class="table">
                         <thead>
                         </thead>
                         <tbody>
                         <tr>
-                            <th colspan="2"><center>Фото</center></th>
+                            <th colspan="2"><center>Фото<input name="photo" value="test"></center></th>
                         </tr>
                         <tr>
                             <th scope="col">ID-card</th>
-                            <th><input type='text' name="name" placeholder='ID-card' class='form-control input-sm'/></th>
+                            <th><input type='text' name="id_card" value="{{ $participant->id_card ?? '' }}" placeholder='ID-card' class='form-control input-sm'/></th>
                         </tr>
                         <tr>
                             <th scope="col">Прізвище</th>
-                            <th><input type='text' name="name" value="{{ $participant->first_name }}" placeholder='Прізвище' class='form-control input-sm'/></th>
+                            <th><input type='text' name="last_name" value="{{ $participant->last_name ?? '' }}" placeholder='Прізвище' class='form-control input-sm'/></th>
                         </tr>
                         <tr>
                             <th scope="col">Ім'я</th>
                             <th>
-                                <input type='text' name="start" placeholder='Ім`я' class='form-control input-sm'/>
+                                <input type='text' name="first_name" value="{{ $participant->first_name ?? '' }}" placeholder='Ім`я' class='form-control input-sm'/>
                             </th>
                         </tr>
                         <tr>
                             <th scope="col">Дата народження</th>
                             <th>
-                                <input type='date' name="finish" placeholder='Дата народження' class='form-control input-sm'/>
+                                <input type='date' name="birth" value="{{ $participant->birth ?? '' }}" class='form-control input-sm'/>
                             </th>
                         </tr>
                         <tr>
                             <th scope="col">E-mail</th>
                             <th>
-                                <input type='email' name="points" placeholder='E-mail' class='form-control input-sm'/>
+                                <input type='email' name="email" value="{{ $participant->email ?? '' }}" placeholder='E-mail' class='form-control input-sm'/>
                             </th>
                         </tr>
                         <tr>
                             <th scope="col">Телефон</th>
                             <th>
-                                <input type='text' name="points" placeholder='Номер телефону' class='form-control input-sm'/>
+                                <input type='text' name="phone" value="{{ $participant->phone ?? '' }}" placeholder='Номер телефону' class='form-control input-sm'/>
                             </th>
                         </tr>
                         <tr>
                             <th scope="col">Стать</th>
                             <th>
-                                <select>
-                                    <option>Чоловіча</option>
-                                    <option>Жіноча</option>
+                                <select name="sex">
+                                    <option {{ ($participant->sex? '':'selected') ?? '' }} value="0">Чоловіча</option>
+                                    <option {{ ($participant->sex? 'selected':'') ?? '' }} value="1">Жіноча</option>
                                 </select>
                             </th>
                         </tr>
                         <tr>
                             <th scope="col"></th>
                         </tr>
-
-
-
-
                         </tbody>
                     </table>
                 </div><!-- /.box-body -->
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-primary mb-2">Додати</button>
+                    <button type="submit" class="btn btn-primary mb-2">Зберегти</button>
                     </form>
                     @if ($errors->any())
                         <div class="alert alert-danger">

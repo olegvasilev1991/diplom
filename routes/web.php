@@ -27,7 +27,7 @@ Route::get('/admin1', function () {
 $router->get('/home', 'HomeController@index');
 $router->group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.'], function () use ($router) {
     $router->get('/', 'IndexController@index')->name('index');
-   // $router->resource('/', 'TournamentsController');//->name('index');
+    //$router->resource('/', 'TournamentsController');//->name('index');
     $router->resource('tournaments', 'TournamentsController');//->name('tournaments');
     $router->resource('participants','ParticipantsController');
 });
