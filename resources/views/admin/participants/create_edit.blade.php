@@ -26,7 +26,14 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <th colspan="2"><center>Фото<input name="photo" value="test"></center></th>
+                            <th colspan="2">
+                              {{--  <form action="/action_page.php">--}}
+                                    <input type="file" id="upload" name="photo" accept="image/*">
+                                    <img id="myImg" src="#" alt="your image" />
+                                    <input type="submit">
+                                {{--</form>--}}
+                            </th>
+                            <th colspan="2"><center>Фото</center></th>
                         </tr>
                         <tr>
                             <th scope="col">ID-card</th>
