@@ -32,7 +32,7 @@
                                     <td>{{ $tournament['start'] }}</td>
                                     <td>{{ $tournament['finish'] }}</td>
                                     <td> {{ $tournament['points'] }}</td>
-                                    <td>Переглянути</td>
+                                    <td><a href="{{ route('admin.tournaments.show',[$tournament['id']]) }}">Переглянути</a></td>
                                     <td>
                                         <form action="{{ route('admin.tournaments.destroy',[$tournament['id']]) }}" method="post" >
                                             @csrf

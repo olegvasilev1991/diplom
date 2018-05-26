@@ -45,14 +45,19 @@ class ParticipantsController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new Participant();
+        $participant = new Participant();
+        $id = 1;
+        if(Participant::count()){
+            $id = $participant->get()->last()->id + 1;
+        }
 
+        $data = $request->all();
         Storage::put(
             'public/avatars/'.$id.'.img',
             file_get_contents($request->file('photo')->getRealPath())
         );
         $data['photo'] = Storage::url('public/avatars/'.$id.'.img');
-        $data->create($data);
+        $participant->create($data);
 
         return redirect('/admin/participants');
     }

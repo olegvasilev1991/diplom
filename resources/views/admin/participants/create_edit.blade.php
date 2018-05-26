@@ -21,7 +21,7 @@
                         @csrf
                         @method('PUT')
                     @else
-                            <form action='{{ route('admin.participants.store') }}' method="post">
+                            <form action='{{ route('admin.participants.store') }}' method="post" enctype="multipart/form-data">
                                 @csrf
                         @endif
                 <div class="box-body">
