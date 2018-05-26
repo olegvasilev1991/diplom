@@ -1,6 +1,10 @@
 @extends('admin.layouts.admin_template')
 
 @section('admin.content')
+
+
+
+
     <div class='row'>
         <div class='col-md-12'>
             <!-- Box -->
@@ -13,7 +17,7 @@
                     </div>
                 </div>
                 @if($participant->id)
-                    <form action='{{ route('admin.participants.update',[$participant->id]) }}' method="post">
+                    <form action='{{ route('admin.participants.update',[$participant->id]) }}' enctype="multipart/form-data" method="post">
                         @csrf
                         @method('PUT')
                     @else
@@ -26,14 +30,10 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <th colspan="2">
-                              {{--  <form action="/action_page.php">--}}
-                                    <input type="file" id="upload" name="photo" accept="image/*">
-                                    <img id="myImg" src="#" alt="your image" />
-                                    <input type="submit">
-                                {{--</form>--}}
+                            <th colspan="2"><center>
+                                <img src="/storage/image/2.png" class="uploadimg" height="200" alt="Image preview...">
+                                    <input type="file" name="photo" onchange="previewFile()" accept="image/*"><br></center>
                             </th>
-                            <th colspan="2"><center>Фото</center></th>
                         </tr>
                         <tr>
                             <th scope="col">ID-card</th>
@@ -99,4 +99,25 @@
         </div><!-- /.col -->
 
     </div><!-- /.row -->
+
+    <script>
+        function previewFile(){
+            var preview = document.querySelector('img.uploadimg'); //selects the query named img
+            var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+            var reader  = new FileReader();
+
+                console.log(preview);
+
+                if (file) {
+                    reader.readAsDataURL(file); //reads the data as a URL
+                } else {
+                    preview.src = "{{ $participant->photo }}";
+                }
+            reader.onloadend= function () {
+                preview.src = reader.result;
+            }
+        }
+
+         previewFile();  //calls the function named previewFile()
+    </script>
 @endsection

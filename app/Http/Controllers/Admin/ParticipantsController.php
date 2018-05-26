@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Participant;
+use Illuminate\Support\Facades\Storage;
 
 class ParticipantsController extends Controller
 {
@@ -87,7 +88,13 @@ class ParticipantsController extends Controller
     {
         $participant = Participant::find($id);
         $data = $request->all();
+        $file = $request->file('photo');
 
+        Storage::put(
+            'public/avatars/'.$id.'.img',
+            file_get_contents($request->file('photo')->getRealPath())
+        );
+        $data['photo'] = Storage::url('public/avatars/'.$id.'.img');
         $participant->update($data);
         return redirect('/admin/participants');
     }
