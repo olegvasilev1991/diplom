@@ -11,10 +11,10 @@ class TournamentController extends Controller
 
     public function Index()
     {
-        $data = Tournament::all();
+        $data = Tournament::get()->last();
 
-        $time_start = strtotime($data[0]->start)-strtotime(now());
-        $time_finish = strtotime($data[0]->finish)-strtotime(now());
+        $time_start = strtotime($data->start)-strtotime(now());
+        $time_finish = strtotime($data->finish)-strtotime(now());
         if($time_finish < 0){
             $data['time'] = 0;
             return view('index', $data);

@@ -9,6 +9,6 @@ class Tournament extends Model
     protected $table = 'tournaments';
 
     protected $fillable = [
-        'start', 'finish', 'points',
+        'name','start', 'finish', 'points',
     ];
 }

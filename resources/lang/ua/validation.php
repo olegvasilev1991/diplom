@@ -66,7 +66,7 @@ return [
     ],
     'not_in'               => 'The selected :attribute is invalid.',
     'not_regex'            => 'The :attribute format is invalid.',
-    'numeric'              => 'The :attribute must be a number.',
+    'numeric'              => ':attribute треба вводити число',
     'present'              => 'The :attribute field must be present.',
     'regex'                => 'The :attribute format is invalid.',
     'required'             => ':attribute не введена',
@@ -117,6 +117,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name'=>'Назва',
+        'start' => 'Початок турніру',
+        'finish' => 'Кількість хвилин',
+        'points' => 'Кількість контрольних точок',
+
+    ],
 
 ];

@@ -21,16 +21,25 @@
                             <th scope="col">Початок турніру</th>
                             <th scope="col">Закінчення турніру</th>
                             <th scope="col">Кількість контрольних пунктів</th>
+                            <th scope="col">Результати змагань</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($tournaments as $tournament)
                                 <tr>
-                                    <th>{{ $tournament['id'] }}</th>
+                                    <td>{{ $tournament['id'] }}</td>
                                     <td>{{ $tournament['name'] }}</td>
                                     <td>{{ $tournament['start'] }}</td>
                                     <td>{{ $tournament['finish'] }}</td>
                                     <td> {{ $tournament['points'] }}</td>
+                                    <td>Переглянути</td>
+                                    <td>
+                                        <form action="{{ route('admin.tournaments.destroy',[$tournament['id']]) }}" method="post" >
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="fa fa-trash-o" onclick="return confirm('Видалити цей турнір?')"></button>
+                                        </form>
+                                    </td>
                                 </tr>
                         @endforeach
                         <tr>
@@ -40,7 +49,7 @@
                                 @csrf
                                 <th><input type='text' name="name" placeholder='Назва' class='form-control input-sm'/></th>
                                 <th><input type='datetime-local' name="start" placeholder='Початок турніру' class='form-control input-sm'/></th>
-                                <th><input type='time' name="finish" placeholder='Закінчення турніру' class='form-control input-sm'/></th>
+                                <th><input type='text' name="finish" placeholder='Кількіть хвилин' class='form-control input-sm'/></th>
                                 <th><input type='text' name="points" placeholder='Кількість контрольних пунктів' class='form-control input-sm'/></th>
                         </tr>
 

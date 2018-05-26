@@ -17,7 +17,7 @@ class TournamentsController extends Controller
     {
         $data['tournaments'] = Tournament::all();
 
-        return view('admin.tournaments',['page_title' => 'Турніри'])->with($data);
+        return view('admin.tournaments.index',['page_title' => 'Турніри'])->with($data);
     }
 
     /**
@@ -40,16 +40,24 @@ class TournamentsController extends Controller
     {
         $request->validate(
             [
-                'name' => 'required',
+                'name' =>  'required',
                 'start' => 'required',
-                'finish' => 'required',
-                'points' => 'required',
+                'finish' => 'required|numeric',
+                'points' => 'required|numeric',
             ]
         );
-        $data = $request->all();
+        $test = $request->all();
 
-        dd($data);
-        //return 'test';
+        $test['finish'] = date('Y-m-d H:i:s',strtotime($request->start) + 50*60);
+
+        $data = new Tournament();
+
+
+        $data->create($test);
+
+        return redirect('/admin/tournaments');
+
+
     }
 
     /**
@@ -92,8 +100,10 @@ class TournamentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-        //
+        Tournament::destroy($id);
+
+        return redirect()->back();
     }
 }

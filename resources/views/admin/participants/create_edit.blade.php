@@ -111,7 +111,7 @@
                 if (file) {
                     reader.readAsDataURL(file); //reads the data as a URL
                 } else {
-                    preview.src = "{{ $participant->photo }}";
+                    preview.src = "{{ $participant->photo ?? '/storage/image/2.png' }}";
                 }
             reader.onloadend= function () {
                 preview.src = reader.result;
