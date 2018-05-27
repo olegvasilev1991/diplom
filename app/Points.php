@@ -9,4 +9,7 @@ class Points extends Model
     protected $fillable = [
         'card_id', 'turn_id', 'kp'
     ];
+
+
+
 }

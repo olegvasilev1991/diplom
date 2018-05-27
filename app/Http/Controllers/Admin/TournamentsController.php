@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Tournament;
 use App\Points;
+use App\Participant;
 
 
 class TournamentsController extends Controller
@@ -71,8 +72,9 @@ class TournamentsController extends Controller
     public function show($id)
     {
         $data = Tournament::find($id);
-        $points = Points::all();
-            dd($points);
+        $points = Points::where('turn_id',$id)->get();
+        $part = Participant::find(4);
+        dd($part->participant);
         return view('admin.tournaments.show-table',[
             'page_title' => 'Турнірна таблиця',
             'points' =>$data['points'] ]);
