@@ -11,6 +11,6 @@ class Participant extends Model
         'id_card', 'first_name', 'last_name', 'birth', 'phone', 'email', 'sex', 'photo'
     ];
     public function participant(){
-        return $this->hasOne('App\Points');
+        return $this->hasMany('App\Points','card_id');
     }
 }

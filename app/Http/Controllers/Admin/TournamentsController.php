@@ -74,7 +74,7 @@ class TournamentsController extends Controller
         $data = Tournament::find($id);
         $points = Points::where('turn_id',$id)->get();
         $part = Participant::find(4);
-        dd($part->participant);
+        dd($part->participant()->get());
         return view('admin.tournaments.show-table',[
             'page_title' => 'Турнірна таблиця',
             'points' =>$data['points'] ]);
