@@ -11,5 +11,7 @@ class Tournament extends Model
     protected $fillable = [
         'name','start', 'finish', 'points',
     ];
-
+    public function points(){
+        return $this->belongsTo('App\Points','id','turn_id');
+    }
 }

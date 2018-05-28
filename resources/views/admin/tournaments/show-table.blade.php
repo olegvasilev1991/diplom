@@ -19,30 +19,25 @@
                             <th scope="col">№</th>
                             <th scope="col">Прізвище</th>
                             <th scope="col">Ім'я</th>
-                            @for($i=1;$i<=$points;$i++)
+                            @for($i=1;$i<=$data['points'];$i++)
                                 <th scope="col">КП №{{$i}}</th>
                             @endfor
                             <th scope="col">Час</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {{--@foreach($tournaments as $tournament)
+                        @foreach($data->points()->get() as $participant)
                             <tr>
-                                <td>{{ $tournament['id'] }}</td>
-                                <td>{{ $tournament['name'] }}</td>
-                                <td>{{ $tournament['start'] }}</td>
-                                <td>{{ $tournament['finish'] }}</td>
-                                <td> {{ $tournament['points'] }}</td>
-                                <td>Переглянути</td>
+                                <td>#</td>
+                                <td>{{ $participant->participant->last_name }}</td>
+                                <td>{{ $participant->participant->first_name }}</td>
+                                <td>{{ $participant->kp }}</td>
+
+
                                 <td>
-                                    <form action="{{ route('admin.tournaments.destroy',[$tournament['id']]) }}" method="post" >
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="fa fa-trash-o" onclick="return confirm('Видалити цей турнір?')"></button>
-                                    </form>
                                 </td>
                             </tr>
-                        @endforeach--}}
+                        @endforeach
 
                         </tbody>
                     </table>

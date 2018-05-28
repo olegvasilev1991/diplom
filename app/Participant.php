@@ -10,7 +10,7 @@ class Participant extends Model
     protected $fillable = [
         'id_card', 'first_name', 'last_name', 'birth', 'phone', 'email', 'sex', 'photo'
     ];
-    public function participant(){
-        return $this->hasMany('App\Points','card_id');
+    public function points($query){
+        return $this->hasMany('App\Points','card_id')->where('turn_id',$query);
     }
 }
