@@ -71,17 +71,22 @@ class TournamentsController extends Controller
      */
     public function show($id)
     {
-        $data = Tournament::find($id);
-        $points = Points::where('turn_id',$id)->groupBy('card_id');
-        $part = Participant::find(4);
-        dd($part->points($id)->get()/*[1]->participant*/,$data->points()->get());
-        foreach ($data->points()->get() as $po){
-            dump($po->participant->first_name);
+        $data = Tournament::find($id)->with('participant.points')->first();
+
+        //dd($part->points($id)->get()/*[1]->participant*/,$data->points()->get());
+       // dd($data->with('participant.points')->get());
+       /* for($i=0; $i<$data['points']){
+            if($po->participant[0]->points->where('kp',$i))
+        }*/
+
+       /* foreach ($data->participant as $po){
+
+            dump($po->points->pluck('kp')->search(342));
         }
-        dd( $data->points()->get());
+        dd( 'stop');*/
         return view('admin.tournaments.show-table',[
             'page_title' => 'Турнірна таблиця',
-            'data' =>$data ]);
+            'data' =>$data]);
     }
 
     /**

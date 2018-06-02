@@ -47,7 +47,7 @@ class ParticipantsController extends Controller
     {
         $participant = new Participant();
         $id = 1;
-        if(Participant::count()){
+        if(Participant::count()!=0){
             $id = $participant->get()->last()->id + 1;
         }
 
@@ -57,6 +57,7 @@ class ParticipantsController extends Controller
             file_get_contents($request->file('photo')->getRealPath())
         );
         $data['photo'] = Storage::url('public/avatars/'.$id.'.img');
+        $data['turn_id'] = 1;
         $participant->create($data);
 
         return redirect('/admin/participants');

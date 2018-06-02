@@ -10,8 +10,8 @@ class Points extends Model
         'card_id', 'turn_id', 'kp'
     ];
 
-    public function participant(){
+/*    public function participant(){
         return $this->hasOne('App\Participant','id','card_id');
-    }
+    }*/
 
 }

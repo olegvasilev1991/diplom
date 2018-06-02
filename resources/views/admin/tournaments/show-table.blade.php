@@ -26,16 +26,26 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($data->points()->get() as $participant)
+                        @foreach($data->participant as $participant)
                             <tr>
                                 <td>#</td>
-                                <td>{{ $participant->participant->last_name }}</td>
-                                <td>{{ $participant->participant->first_name }}</td>
-                                <td>{{ $participant->kp }}</td>
+                                <td>{{ $participant->last_name }}</td>
+                                <td>{{ $participant->first_name }}</td>
+
+                                @for($i=0;$i<$data['points'];$i++)
+                                    {{dump($participant->points->pluck('kp')->search($i,$i) )}}
+                                    <td><spant class="{{ $participant->points->pluck('kp')->search($i,$i) ?'fa fa-check' : 'fa fa-close'}}"></spant></td>
+                                @endfor
+                               {{-- @foreach($participant->points as $point)
+
+                                    <td><spant class="{{ $point->kp ?'fa fa-check' : 'fa fa-close'}}"></spant></td>
+
+                                    @endforeach--}}
+                              {{--  <td><spant class="{{ $point->kp ?'fa fa-check' : 'fa fa-close'}}"></spant></td>
+                                <td><spant class="{{ $point->kp ?'fa fa-check' : 'fa fa-close'}}"></spant></td>
+                                <td><spant class="{{ $point->kp ?'fa fa-check' : 'fa fa-close'}}"></spant></td>--}}
 
 
-                                <td>
-                                </td>
                             </tr>
                         @endforeach
 

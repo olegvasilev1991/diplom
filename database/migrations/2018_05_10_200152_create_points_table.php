@@ -17,10 +17,6 @@ class CreatePointsTable extends Migration
             $table->increments('id');
             $table->integer('card_id')->unsigned();
             $table->foreign('card_id')->references('id')->on('participants');
-
-            $table->integer('turn_id')->unsigned();
-            $table->foreign('turn_id')->references('id')->on('tournaments');
-
             $table->integer('kp')->unsigned();
             $table->timestamps();
         });

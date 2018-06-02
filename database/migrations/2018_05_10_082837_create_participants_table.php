@@ -16,6 +16,10 @@ class CreateParticipantsTable extends Migration
         Schema::create('participants', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_card')->nullable();
+
+            $table->integer('turn_id')->unsigned();
+            $table->foreign('turn_id')->references('id')->on('tournaments');
+
             $table->char('first_name');
             $table->char('last_name');
             $table->date('birth');
