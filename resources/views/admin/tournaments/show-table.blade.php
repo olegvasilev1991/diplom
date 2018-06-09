@@ -32,20 +32,9 @@
                                 <td>{{ $participant->last_name }}</td>
                                 <td>{{ $participant->first_name }}</td>
 
-                                @for($i=0;$i<$data['points'];$i++)
-                                    {{dump($participant->points->pluck('kp')->search($i,$i) )}}
-                                    <td><spant class="{{ $participant->points->pluck('kp')->search($i,$i) ?'fa fa-check' : 'fa fa-close'}}"></spant></td>
+                                @for($i=1;$i<=$data['points'];$i++)
+                                    <td><spant class="{{ $participant->points->firstWhere('kp',$i) ?'fa fa-check' : 'fa fa-close'}}"></spant></td>
                                 @endfor
-                               {{-- @foreach($participant->points as $point)
-
-                                    <td><spant class="{{ $point->kp ?'fa fa-check' : 'fa fa-close'}}"></spant></td>
-
-                                    @endforeach--}}
-                              {{--  <td><spant class="{{ $point->kp ?'fa fa-check' : 'fa fa-close'}}"></spant></td>
-                                <td><spant class="{{ $point->kp ?'fa fa-check' : 'fa fa-close'}}"></spant></td>
-                                <td><spant class="{{ $point->kp ?'fa fa-check' : 'fa fa-close'}}"></spant></td>--}}
-
-
                             </tr>
                         @endforeach
 

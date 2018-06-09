@@ -79,11 +79,12 @@ class TournamentsController extends Controller
             if($po->participant[0]->points->where('kp',$i))
         }*/
 
-       /* foreach ($data->participant as $po){
+        /*foreach ($data->participant as $po){
 
-            dump($po->points->pluck('kp')->search(342));
+            dump($po->points->firstWhere('kp', 3));
         }
         dd( 'stop');*/
+       // dd($data);
         return view('admin.tournaments.show-table',[
             'page_title' => 'Турнірна таблиця',
             'data' =>$data]);
