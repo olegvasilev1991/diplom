@@ -26,7 +26,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($data->participant as $participant)
+                        @foreach($participants as $participant)
                             <tr>
                                 <td>#</td>
                                 <td>{{ $participant->last_name }}</td>
