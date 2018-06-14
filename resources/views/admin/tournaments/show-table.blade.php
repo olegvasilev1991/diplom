@@ -35,7 +35,7 @@
                                 @for($i=1;$i<=$data['points'];$i++)
                                     <td><spant class="{{ $participant->points->firstWhere('kp',$i) ?'fa fa-check' : 'fa fa-close'}}"></spant></td>
                                 @endfor
-                                <td>{{ $participant->points->pluck('created_at')->last() }}</td>>
+                                <td>{{ $participant->points->pluck('created_at')->last() ?? 'вибув' }}</td>>
                             </tr>
                         @endforeach
                         </tbody>

@@ -72,17 +72,12 @@ class TournamentsController extends Controller
     public function show($id)
     {
         $data = Tournament::find($id)->with('participant.points')->first();
-//dd($data);
-        $participants = $data->participant->sortBy(function ($time){
-            dump($time->points->last()->created_at);
-            return $time->points->last()->created_at;
+        $participants = optional($data->participant)->sortBy(function ($time){
+            return optional($time->points->last())->created_at;
         })->sortByDesc(function ($points){
-            dump( $points->points);
-            return count($points->points);
+            return count(optional($points)->points);
         });
 
-
-        //dd($participants);
         return view('admin.tournaments.show-table',[
             'page_title' => 'Турнірна таблиця',
             'data' =>$data,
