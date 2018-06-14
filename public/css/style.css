@@ -406,13 +406,13 @@ a.hidden.btn5{
 }*/
 
 .popup_form_inner{
-    width: 350px;
+    width: 500px;
     height: auto;
     background: #fff;
     padding: 15px;
     position: absolute;
     top: 100px;
-    left: 50%;
+    left: 45%;
     margin-left: -175px;
 }
 
