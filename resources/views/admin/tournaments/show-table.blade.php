@@ -26,9 +26,9 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($participants as $participant)
+                        @foreach($participants as $key => $participant)
                             <tr>
-                                <td>#</td>
+                                <td>{{$key+=1}}</td>
                                 <td>{{ $participant->last_name }}</td>
                                 <td>{{ $participant->first_name }}</td>
 

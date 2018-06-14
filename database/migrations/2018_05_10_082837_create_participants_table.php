@@ -26,7 +26,7 @@ class CreateParticipantsTable extends Migration
             $table->char('phone',50);
             $table->char('email',50);
             $table->boolean('sex');
-            $table->char('photo',50);
+            $table->char('photo',50)->nullable();;
             $table->timestamps();
         });
     }

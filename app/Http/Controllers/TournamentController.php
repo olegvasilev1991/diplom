@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tournament;
+use App\Participant;
 
 class TournamentController extends Controller
 {
-
 
     public function Index()
     {
@@ -26,5 +26,10 @@ class TournamentController extends Controller
         }
         //dd($data,now());
         return view('index', $data);
+    }
+
+    public function storeParticipant(){
+        $data = new Participant();
+
     }
 }
