@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Points extends Model
 {
+    protected $table = 'points';
+
     protected $fillable = [
-        'card_id', 'turn_id', 'kp'
+        'card_id', 'kp'
     ];
 
 /*    public function participant(){

@@ -24,6 +24,7 @@ Route::get('/admin1', function () {
     return view('admin.starter');
 });
 
+$router->get('/admin/points','Admin\PointsController@storePoints');
 $router->get('/home', 'HomeController@index');
 $router->group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.'], function () use ($router) {
     //$router->get('/', 'IndexController@index')->name('index');
@@ -31,5 +32,5 @@ $router->group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'adm
     //$router->resource('/', 'TournamentsController');//->name('index');
     $router->resource('tournaments', 'TournamentsController');//->name('tournaments');
     $router->resource('participants','ParticipantsController');
-    $router->get('/points','PointsControllr@storePoints');
+    //$router->get('points','PointsController@storePoints');
 });
