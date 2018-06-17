@@ -31,4 +31,5 @@ $router->group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'adm
     //$router->resource('/', 'TournamentsController');//->name('index');
     $router->resource('tournaments', 'TournamentsController');//->name('tournaments');
     $router->resource('participants','ParticipantsController');
+    $router->get('/points','PointsControllr@storePoints');
 });

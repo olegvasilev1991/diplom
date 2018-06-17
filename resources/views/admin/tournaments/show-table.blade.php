@@ -41,7 +41,7 @@
                                         @if($data->finish < $participant->points->pluck('created_at')->last())
                                             <br>вибув за часом
                                             @endif
-                                        @else
+                                        @elseif($data->finish < now())
                                             вибув
                                         @endif
                                     </td>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Tournament;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Participant;
@@ -57,7 +58,7 @@ class ParticipantsController extends Controller
             file_get_contents($request->file('photo')->getRealPath())
         );
         $data['photo'] = Storage::url('public/avatars/'.$id.'.img');
-        $data['turn_id'] = 1;
+        $data['turn_id'] = Tournament::get()->last()->id;
         $participant->create($data);
 
         return redirect('/admin/participants');
