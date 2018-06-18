@@ -19,6 +19,7 @@ $router->auth();
 });*/
 
 $router->get('/', 'TournamentController@Index');
+$router->post('/participant', 'TournamentController@storeParticipant')->name('storeParticipant');
 
 Route::get('/admin1', function () {
     return view('admin.starter');

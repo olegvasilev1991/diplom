@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru-ru">
 <head>
-
-
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="/js/underscore-min.js"></script>
-
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css?ver=1522672390">
     <script type="text/javascript"
             src="/js/script.js?v=1522672961"></script> {{-- <script type="text/javascript">tobiz.blocks = [];</script>--}}
-
-
     <link href="/css/mobile.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/flipclock.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -42,12 +38,21 @@
             clock.start();
 
         });
+
+       /* $(document).ready(function(){
+
+                $(".popup_thanks").show();
+        });*/
     </script>
 
     <style id="page_style">
         .section .title {
             font-family: El Messiri, sans-serif;
-        }."\n"
+        }
+
+        .
+
+        "\n"
     </style>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
@@ -55,24 +60,20 @@
 </head>
 <body class="editor_false">
 
-
 <div id="wrapper">
     <div class="hide_line  section section107  " style="background-color:#ffffff;  background-image:url(/img/null.png);"
          data-id="508574" id="b_508574"><a name="a_508574"></a>
         <div class="section_inner">
 
-
             <div class="logo_img"><img src="/img/200x0/default_logo.jpg" alt=""></div>
-
-
             <div class="menu-and-phone-and-btn">
-                <div class="btn1 surround  " style="background-color:#3F7B16;  border-radius: 0.3em;   box-shadow: 0; ">
+                {{--<div class="btn1 surround  " style="background-color:#3F7B16;  border-radius: 0.3em;   box-shadow: 0; ">
                     Зателефонуйте мені
-                </div>
+                </div>--}}
                 <div class="menu1">
                     <ul>
-                        <li><a href="#anchor1" title="О НАС">Про сайт</a></li>
-                        <li><a href="#anchor3" title="турнірна таблиця">Турнірна таблиця</a></li>
+                        <li><a href="#anchor1" title="Про сайт">Про сайт</a></li>
+                        <li><a href="#anchor3" title="Турнірна таблиця">Турнірна таблиця</a></li>
                         <li><a href="#anchor4" title="Контакти">Контакти</a></li>
                     </ul>
                 </div>
@@ -84,14 +85,34 @@
             <div class="popup_form">
                 <div class="popup_form_inner">
                     <div class="popup_form_close">X</div>
-                    <div class="popup_form_title">Заповніть форму</div>
+                    <div class="popup_form_title">Заявка для участі в турнірі</div>
                     <form action="handler.php" enctype="multipart/form-data" method="post">
                         <div class="form1"><input type="hidden" name="Название формы" value="">
                             <div class="field">
-                                <div class="field_title">Ведіть ім'я</div>
+                                <div class="field_title">Ім'я</div>
                                 <div class="field_description"></div>
-                                <div class="field_input"><input type="text" required="required" name="Введите имя"
+                                <div class="field_input"><input type="text" required="required" name="first_name"
                                                                 placeholder="Ведіть ім'я"></div>
+                            </div>
+                            <div class="field">
+                                <div class="field_title">Прізвище</div>
+                                <div class="field_description"></div>
+                                <div class="field_input"><input type="text" required="required" name="last_name"
+                                                                placeholder="Ведіть прізвище"></div>
+                            </div>
+                            <div class="field">
+                                <div class="field_title">Стать</div>
+                                <div class="field_description"></div>
+                                <div class="field_input"><select>
+                                        <option>Чоловіча</option>
+                                        <option>Жіноча</option>
+                                    </select></div>
+                            </div>
+                            <div class="field">
+                                <div class="field_title">Ведіть E-mail</div>
+                                <div class="field_description"></div>
+                                <div class="field_input"><input type="text" required="required" name="email"
+                                                                placeholder="Ведіть E-mail"></div>
                             </div>
                             <div class="field">
                                 <div class="field_title">Ведіть номер телефону</div>
@@ -103,7 +124,7 @@
                             <div class="field">
                                 <div class="field_input"><input type="submit" class="submit_btn surround"
                                                                 data-action="thanks" data-url="" data-amount="0"
-                                                                value="Замовити дзвінок"
+                                                                value="Зареєструватись"
                                                                 style="background-color:#3F7B16;    border-radius: 0.3em; ;  box-shadow: 0; ">
                                 </div>
                             </div>
@@ -111,7 +132,6 @@
                     </form>
                 </div>
             </div>
-
 
             <div class="popup_thanks">
                 <div class="popup_thanks_inner">
@@ -124,11 +144,9 @@
         </div>
     </div>
 
-
     <div class="section section153   fixed "
          style="background-color:#ffffff; background-image:url(/storage/image/fon.jpg);" data-id="508575" id="b_508575">
         <a name="a_508575"></a>
-
 
         <div class="dark"></div>
         <div class="noise" style="background-image:url(/img/null.png);"></div>
@@ -139,7 +157,7 @@
                         орієнтування</p></div>
                 <div class="sub_title  "><p>Кваліфікаційна робота студента групи І-14</p></div>
 
-                <div class="btn1 surround  " style="background-color:#3F7B16;  border-radius: 0.3em;   box-shadow: 0; ">
+                <div class="btn1 surround" style="background-color:#3F7B16;  border-radius: 0.3em;   box-shadow: 0; ">
                     Заявка для участі
                 </div>
 
@@ -149,27 +167,59 @@
                 <div class="popup_form_inner">
                     <div class="popup_form_close">X</div>
                     <div class="popup_form_title">Заявка для участі в турнірі</div>
-                    <form action="handler.php" enctype="multipart/form-data" method="post">
-                        <div class="form1"><input type="hidden" name="Название формы" value="">
+                    <form action="{{ route('storeParticipant') }}" enctype="multipart/form-data" method="post">
+                        @csrf
+                        <div class="form1">
                             <div class="field">
-                                <div class="field_title">Ведіть ім'я</div>
+                                <div class="field_title">Ім'я</div>
                                 <div class="field_description"></div>
-                                <div class="field_input"><input type="text" required="required" name="Введите имя"
+                                <div class="field_input"><input type="text" required="required" name="first_name"
                                                                 placeholder="Ведіть ім'я"></div>
+                            </div>
+                            <div class="field">
+                                <div class="field_title">Прізвище</div>
+                                <div class="field_description"></div>
+                                <div class="field_input"><input type="text" required="required" name="last_name"
+                                                                placeholder="Ведіть прізвище"></div>
+                            </div>
+                            <div class="field" style="text-align: center;">
+                                <div class="field_title">Стать</div>
+                                <div class="field_description"></div>
+                                <div class="field_input"><select>
+                                        <option>Чоловіча</option>
+                                        <option>Жіноча</option>
+                                    </select></div>
+                            </div>
+                            <div class="field">
+                                <div class="field_title">Дата народження</div>
+                                <div class="field_description"></div>
+                                <div class="field_input"><input type="date" required="required" name="birth"
+                                                                placeholder="Дата народження"></div>
                             </div>
                             <div class="field">
                                 <div class="field_title">Ведіть E-mail</div>
                                 <div class="field_description"></div>
-                                <div class="field_input"><input type="text" required="required" name="Введите E-mail"
+                                <div class="field_input"><input type="email" required="required" name="email"
                                                                 placeholder="Ведіть E-mail"></div>
                             </div>
                             <div class="field">
                                 <div class="field_title">Ведіть номер телефону</div>
                                 <div class="field_description"></div>
                                 <div class="field_input"><input type="text" required="required"
-                                                                name="Введите номер телефона"
+                                                                name="phone"
                                                                 placeholder="Ведіть номер телефону"></div>
                             </div>
+
+                            <div class="field" style="text-align: center;">
+                                <div class="g-recaptcha" style="display: inline-block;"
+                                     data-sitekey="{{ env('CAPTCHA_SITE_KEY') }}"></div>
+                                @if ($errors->has('g-recaptcha-response'))
+                                    <span class="invalid-feedback" style="display: block;">
+                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+            </span>
+                                @endif
+                            </div>
+
                             <div class="field">
                                 <div class="field_input"><input type="submit" class="submit_btn surround"
                                                                 data-action="thanks" data-url="" data-amount="0"
@@ -231,234 +281,16 @@
                 <div class="ico2  radius     border   shadow  "><i class="fa fa-cogs" style="color:#3F7B16;"></i></div>
 
                 <div class="title2"><p>Аналіз інформації, тобто порівняння та зіставлення даних</p></div>
-
-
             </div>
             <div class="col_3 last">
-
-
                 <div class="ico3   radius     border   shadow  "><i class="fa fa-certificate"
                                                                     style="color:#3F7B16;"></i></div>
-
                 <div class="title3"><p>Приняття рішення про напрям бігу, швидкість руху, подальші дії</p></div>
-
             </div>
             <div class="clear"></div>
-            {{--  <div class="extra_info_block_wrapper">
-                  <div class="extra_info_block">
-                      <div class="close">Х</div>
-                      <div class="left"><img src="/img/400x400/image_247.jpg" alt="">
-
-                      </div>
-                      <div class="right">
-                          <div class="extra_info1"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
-
-                          <div class="btn1x surround " style="background-color:#3F7B16; ">Узнать подробнее</div>
-                      </div>
-                      <div class="clear"></div>
-
-                  </div>
-              </div>--}}
-            {{--<div class="extra_info_block_wrapper">
-                <div class="extra_info_block">
-                    <div class="close">Х</div>
-                    <div class="left"><img src="/img/400x400/image_220.jpg" alt="">
-
-                    </div>
-                    <div class="right">
-                        <div class="extra_info2"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
-
-                        <div class="btn2x surround " style="background-color:#3F7B16; ">Узнать подробнее</div>
-                    </div>
-                    <div class="clear"></div>
-
-                </div>
-            </div>--}}
-            {{--<div class="extra_info_block_wrapper">
-                <div class="extra_info_block">
-                    <div class="close">Х</div>
-                    <div class="left"><img src="/img/400x400/image_286.jpg" alt="">
-
-
-                    </div>
-                    <div class="right">
-                        <div class="extra_info3"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
-
-                        <div class="btn3x surround " style="background-color:#3F7B16; ">Узнать подробнее</div>
-                    </div>
-                    <div class="clear"></div>
-
-                </div>
-            </div>--}}
         </div>
-        {{--	<div class="popup_thanks">
-<div class="popup_thanks_inner">
-    <div class="popup_thanks_close">X</div>
-    <div class="popup_thanks_title">Спасибо за заявку!</div>
-    <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
-</div>
-</div>--}}
-
-
     </div>
 </div>
-
-{{--<div class="hide_line  section section307 " style="background-color:#FFFFFF;  background-image:url(/img/null.png);" data-id="508610" id="b_508610"><a name="anchor1"></a>
-                        <div class="section_inner">
-                                <div class="title  ">Абонементы и цены</div>
-                                <div class="sub_title  ">Ниже представлена информация о ценах:</div>
-                                <div class="col1 col">
-                                <div class="image1   border   shadow  "><img src="/img/300x150/9b82f5af48c06a97a7221cd540e4732b.jpg" alt=""></div>
-                                    <div class="col_title col_title_1  "><p style="text-align:center"><span style="font-size: 20px;">Базовый курс</span></p></div>
-                                      
-                                        <div class="arr1">
-                                            <div class="item">
-                                                
-                                                <div class="item item_title">Ежедневные походы</div>
-                                            </div>
-                                        </div> 
-                                      
-                                        <div class="arr1">
-                                            <div class="item">
-                                                
-                                                <div class="item item_title">Личный инструктор</div>
-                                            </div>
-                                        </div> 
-                                      
-                                        <div class="arr1">
-                                            <div class="item">
-                                                
-                                                <div class="item item_title">Учебная программа</div>
-                                            </div>
-                                        </div> 
-                                      
-                                        <div class="arr1">
-                                            <div class="item">
-                                                
-                                                <div class="item item_title"><p style="text-align:center"><span style="font-size:24px">4990</span></p></div>
-                                            </div>
-                                        </div> 
-                                    
-                                    <a href="undefined" class="btn1 surround  " style="background-color:#3F7B16;  border-radius: 0.3em;   box-shadow: 0; ">Записаться сейчас</a>
-                                    
-                                    
-                                        <div class="popup_form">
-                            <div class="popup_form_inner">
-                                <div class="popup_form_close">X</div>
-                                <div class="popup_form_title">Оставить  заявку</div>
-                                <form action="handler.php" enctype="multipart/form-data" method="post">
-                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#3F7B16;    border-radius: 0.3em; ;  box-shadow: 0; "></div></div></div>
-                                </form>
-                            </div>
-                    </div>
-                
-                                    
-                                    
-                                </div>
-                                <div class="col2  col">
-                                    <div class="image2   border   shadow  "><img src="/img/300x150/ba40159946b612a278c5581495ce8b36.jpg" alt=""></div>
-                                    <div class="col_title col_title_2  "><p style="text-align:center"><span style="font-size:20px">Расширеный курс</span></p></div>
-                                      
-                                        <div class="arr2">
-                                            <div class="item">
-                                                
-                                                <div class="item item_title">Ежедневные походы</div>
-                                            </div>
-                                        </div> 
-                                      
-                                        <div class="arr2">
-                                            <div class="item">
-                                                
-                                                <div class="item item_title">Личный инструктор</div>
-                                            </div>
-                                        </div> 
-                                      
-                                        <div class="arr2">
-                                            <div class="item">
-                                                
-                                                <div class="item item_title">Учебная программа</div>
-                                            </div>
-                                        </div> 
-                                      
-                                        <div class="arr2">
-                                            <div class="item">
-                                                
-                                                <div class="item item_title"><p style="text-align:center"><span style="font-size:24px">19990</span></p></div>
-                                            </div>
-                                        </div> 
-                                    
-                                    <a href="undefined" class="btn2 surround  " style="background-color:#3F7B16;  border-radius: 0.3em;   box-shadow: 0; ">Записаться сейчас</a>
-                                    
-                                        <div class="popup_form">
-                            <div class="popup_form_inner">
-                                <div class="popup_form_close">X</div>
-                                <div class="popup_form_title">Оставить  заявку</div>
-                                <form action="handler.php" enctype="multipart/form-data" method="post">
-                                        <div class="form2"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#3F7B16;    border-radius: 0.3em; ;  box-shadow: 0; "></div></div></div>
-                                </form>
-                            </div>
-                    </div>
-                
-                                    
-                                </div>
-                                <div class="col3  col">
-                                    <div class="image3   border   shadow  "><img src="/img/300x150/864123e8d5ac37b533a049152c403f13.jpg" alt=""></div>
-                                    <div class="col_title col_title_3  "><p style="text-align:center"><span style="font-size:20px">Ускореный курс</span></p></div>
-                                      
-                                        <div class="arr3">
-                                            <div class="item">
-                                                
-                                                <div class="item item_title">Ежедневные походы</div>
-                                            </div>
-                                        </div> 
-                                      
-                                        <div class="arr3">
-                                            <div class="item">
-                                                
-                                                <div class="item item_title">Личный инструктор</div>
-                                            </div>
-                                        </div> 
-                                      
-                                        <div class="arr3">
-                                            <div class="item">
-                                                
-                                                <div class="item item_title">Учебная программа</div>
-                                            </div>
-                                        </div> 
-                                      
-                                        <div class="arr3">
-                                            <div class="item">
-                                                
-                                                <div class="item item_title"><p style="text-align:center"><span style="font-size:24px">39990</span></p></div>
-                                            </div>
-                                        </div> 
-                                    
-                                    <a href="undefined" class="btn3 surround  " style="background-color:#3F7B16;  border-radius: 0.3em;   box-shadow: 0; ">Записаться сейчас</a>
-                                    
-                                        <div class="popup_form">
-                            <div class="popup_form_inner">
-                                <div class="popup_form_close">X</div>
-                                <div class="popup_form_title">Оставить  заявку</div>
-                                <form action="handler.php" enctype="multipart/form-data" method="post">
-                                        <div class="form3"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#3F7B16;    border-radius: 0.3em; ;  box-shadow: 0; "></div></div></div>
-                                </form>
-                            </div>
-                    </div>
-                
-                                    
-                                </div>
-                                <div class="clear"></div>
-                                <div class="popup_thanks">
-                        <div class="popup_thanks_inner">
-                            <div class="popup_thanks_close">X</div>
-                            <div class="popup_thanks_title">Дякую за заявку!</div>
-                            <div class="popup_thanks_text">Заявка відправлена. З вами зв'яжуться для подальшої інструкції.</div>
-                        </div>
-                    </div>
-                
-                                    
-                        </div>
-                </div>--}}
 
 <div class="hide_line section section164  " style="background-color:#ffffff;  background-image:url(/img/null.png);"
      data-id="508613" id="b_508613"><a name="a_508613"></a>
@@ -467,8 +299,8 @@
             <div class="sub_title  ">За будь-яким питанням звертайтейсь за телефоном +380978196656 або за електронною
                 адресою oleg.vasilev1991@gmail.com
             </div>
-            <div class="btn1 surround  " style="background-color:#3F7B16;  border-radius: 0.3em;   box-shadow: 0; ">
-                Оставить заявку
+            <div class="btn1 surround" style="background-color:#3F7B16;  border-radius: 0.3em;   box-shadow: 0; ">
+                Заявка для участі
             </div>
 
         </div>
@@ -478,27 +310,51 @@
             <div class="popup_form_inner">
                 <div class="popup_form_close">X</div>
                 <div class="popup_form_title">Заявка для участі в турнірі</div>
-                <form action="handler.php" enctype="multipart/form-data" method="post">
-                    <div class="form1"><input type="hidden" name="Название формы" value="">
+                <form action="{{ route('storeParticipant') }}" enctype="multipart/form-data" method="post">
+                    @csrf
+                    <div class="form1">
                         <div class="field">
-                            <div class="field_title">Ведіть ім'я</div>
+                            <div class="field_title">Ім'я</div>
                             <div class="field_description"></div>
-                            <div class="field_input"><input type="text" required="required" name="Введите имя"
+                            <div class="field_input"><input type="text" required="required" name="first_name"
                                                             placeholder="Ведіть ім'я"></div>
+                        </div>
+                        <div class="field">
+                            <div class="field_title">Прізвище</div>
+                            <div class="field_description"></div>
+                            <div class="field_input"><input type="text" required="required" name="last_name"
+                                                            placeholder="Ведіть прізвище"></div>
+                        </div>
+                        <div class="field">
+                            <div class="field_title">Дата народження</div>
+                            <div class="field_description"></div>
+                            <div class="field_input"><input type="date" required="required" name="birth"
+                                                            placeholder="Дата народження"></div>
                         </div>
                         <div class="field">
                             <div class="field_title">Ведіть E-mail</div>
                             <div class="field_description"></div>
-                            <div class="field_input"><input type="text" required="required" name="Введите E-mail"
+                            <div class="field_input"><input type="email" required="required" name="email"
                                                             placeholder="Ведіть E-mail"></div>
                         </div>
                         <div class="field">
                             <div class="field_title">Ведіть номер телефону</div>
                             <div class="field_description"></div>
                             <div class="field_input"><input type="text" required="required"
-                                                            name="Введите номер телефона"
+                                                            name="phone"
                                                             placeholder="Ведіть номер телефону"></div>
                         </div>
+
+                        <div class="field" style="text-align: center;">
+                            <div class="g-recaptcha" style="display: inline-block;"
+                                 data-sitekey="{{ env('CAPTCHA_SITE_KEY') }}"></div>
+                            @if ($errors->has('g-recaptcha-response'))
+                                <span class="invalid-feedback" style="display: block;">
+                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+            </span>
+                            @endif
+                        </div>
+
                         <div class="field">
                             <div class="field_input"><input type="submit" class="submit_btn surround"
                                                             data-action="thanks" data-url="" data-amount="0"
@@ -629,7 +485,7 @@
                 консультант відповість на питання
             </div>
 
-            <div class="btn1 surround  " style="background-color:#3F7B16;  border-radius: 0.3em;   box-shadow: 0; ">
+            <div class="btn1 surround" style="background-color:#3F7B16;  border-radius: 0.3em;   box-shadow: 0; ">
                 Заявка для участі
             </div>
         </div>
@@ -638,27 +494,51 @@
             <div class="popup_form_inner">
                 <div class="popup_form_close">X</div>
                 <div class="popup_form_title">Заявка для участі в турнірі</div>
-                <form action="handler.php" enctype="multipart/form-data" method="post">
-                    <div class="form1"><input type="hidden" name="Название формы" value="">
+                <form action="{{ route('storeParticipant') }}" enctype="multipart/form-data" method="post">
+                    @csrf
+                    <div class="form1">
                         <div class="field">
-                            <div class="field_title">Ведіть ім'я</div>
+                            <div class="field_title">Ім'я</div>
                             <div class="field_description"></div>
-                            <div class="field_input"><input type="text" required="required" name="Введите имя"
+                            <div class="field_input"><input type="text" required="required" name="first_name"
                                                             placeholder="Ведіть ім'я"></div>
+                        </div>
+                        <div class="field">
+                            <div class="field_title">Прізвище</div>
+                            <div class="field_description"></div>
+                            <div class="field_input"><input type="text" required="required" name="last_name"
+                                                            placeholder="Ведіть прізвище"></div>
+                        </div>
+                        <div class="field">
+                            <div class="field_title">Дата народження</div>
+                            <div class="field_description"></div>
+                            <div class="field_input"><input type="date" required="required" name="birth"
+                                                            placeholder="Дата народження"></div>
                         </div>
                         <div class="field">
                             <div class="field_title">Ведіть E-mail</div>
                             <div class="field_description"></div>
-                            <div class="field_input"><input type="text" required="required" name="Введите E-mail"
+                            <div class="field_input"><input type="email" required="required" name="email"
                                                             placeholder="Ведіть E-mail"></div>
                         </div>
                         <div class="field">
                             <div class="field_title">Ведіть номер телефону</div>
                             <div class="field_description"></div>
                             <div class="field_input"><input type="text" required="required"
-                                                            name="Введите номер телефона"
+                                                            name="phone"
                                                             placeholder="Ведіть номер телефону"></div>
                         </div>
+
+                        <div class="field" style="text-align: center;">
+                            <div class="g-recaptcha" style="display: inline-block;"
+                                 data-sitekey="{{ env('CAPTCHA_SITE_KEY') }}"></div>
+                            @if ($errors->has('g-recaptcha-response'))
+                                <span class="invalid-feedback" style="display: block;">
+                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+            </span>
+                            @endif
+                        </div>
+
                         <div class="field">
                             <div class="field_input"><input type="submit" class="submit_btn surround"
                                                             data-action="thanks" data-url="" data-amount="0"
@@ -698,11 +578,7 @@
 <div class="hide_line section section119   " style="background-color:#ffffff;  background-image:url(/img/null.png);"
      data-id="508624" id="b_508624"><a name="a_508624"></a>
     <div class="section_inner">
-
-
         <div class="logo_img"><img src="/img/200x0/default_logo.jpg" alt=""></div>
-
-
         <div class="address-and-ua">
             <div class="address1">Кваліфікаційна робота<br>студента групи І-14 Васильєва Олега Юрійович</div>
         </div>
@@ -714,7 +590,7 @@
     </div>
 </div>
 
-</div>
+{{--</div>--}}
 
 </body>
 </html>

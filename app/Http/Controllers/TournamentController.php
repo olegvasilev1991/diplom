@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tournament;
 use App\Participant;
+use App\Rules\Captcha;
+use Illuminate\Support\Facades\Validator;
 
 class TournamentController extends Controller
 {
@@ -28,8 +30,15 @@ class TournamentController extends Controller
         return view('index', $data);
     }
 
-    public function storeParticipant(){
-        $data = new Participant();
+    public function storeParticipant(Request $request){
 
+        $data = $request->all();
+        dd($data);
+        Validator::make($request->all(), [
+            'g-recaptcha-response' => new Captcha(),
+        ])->validate();
+        $participant = new Participant();
+        $participant->create($data);
+        return redirect()->back();//->json(['message' => 'success']);
     }
 }

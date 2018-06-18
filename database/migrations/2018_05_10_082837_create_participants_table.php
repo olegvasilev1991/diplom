@@ -15,7 +15,7 @@ class CreateParticipantsTable extends Migration
     {
         Schema::create('participants', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('id_card')->unsigned();
+            $table->bigInteger('id_card')->unsigned()->nullable();
 
             $table->integer('turn_id')->unsigned();
             $table->foreign('turn_id')->references('id')->on('tournaments');
@@ -26,7 +26,7 @@ class CreateParticipantsTable extends Migration
             $table->char('phone',50);
             $table->char('email',50);
             $table->boolean('sex');
-            $table->char('photo',50)->nullable();;
+            $table->char('photo',50)->nullable();
             $table->timestamps();
         });
     }
