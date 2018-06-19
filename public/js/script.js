@@ -79,10 +79,10 @@ $(function () {
 
 
 
-        if (src.indexOf('https://www.youtube.com/embed/') > -1) {
+      /*  if (src.indexOf('https://www.youtube.com/embed/') > -1) {
             var video_id = src.substring(30);
             $(this).replaceWith('<div class="video_holder" data-video="' + $(this).attr('src') + '" style="width:' + $(this).width() + 'px; height:' + $(this).height() + 'px; background-image: url(https://i.ytimg.com/vi/' + video_id + '/hqdefault.jpg);"></div>')
-        }
+        }*/
     })
     $('.video_holder').on('click', function () {
         var src = $(this).data('video');
@@ -92,10 +92,10 @@ $(function () {
 
 
 
-    $('.section318 .accordion .line.caption, .section319 .accordion .line.caption').click(function () {
+   /* $('.section318 .accordion .line.caption, .section319 .accordion .line.caption').click(function () {
         $(this).parent().parent().find('.line.option, .line.btn').hide();
         $(this).parent().find('.line.option, .line.btn').show();
-    })
+    })*/
 
 
 
@@ -106,9 +106,9 @@ $(function () {
     $('body').on('click', '.popup_thanks_close, .popup_form_close', function () {
         $('.popup_thanks').hide();
         $('.popup_form').hide();
-        $('.popup_form').removeClass('show');
+        //$('.popup_form').removeClass('show');
     });
-    $('body').on('click', '.section1009 .widget_form_close', function () {
+   /* $('body').on('click', '.section1009 .widget_form_close', function () {
         $('.section1009 .form_wrapper').hide();
     });
     $('body').on('click', '.section1010 .widget_form_close', function () {
@@ -130,7 +130,7 @@ $(function () {
         $('.section1009 .social_icons').toggle();
         $('.section1009 .form_wrapper').show();
         $('.section1009 .all_forms').show();
-    });
+    });*/
 
 //    $(document).click(function(event) {
 //        if ($(event.target).closest(".all_forms").length) return;
@@ -148,7 +148,7 @@ $(function () {
 
 
 
-    $('body').on('mouseup', '#wrapper', function (event) {
+    /*$('body').on('mouseup', '#wrapper', function (event) {
         var container = $(".section1009 .section_inner > .form_wrapper");
         if (container.has(event.target).length === 0) {
             container.hide();
@@ -184,9 +184,9 @@ $(function () {
         $('.section155').each(function () {
             SetVideoBG($(this));
         })
-    }
+    }*/
 
-    if ($('.section52').size()) {
+   /* if ($('.section52').size()) {
 
         $('.section52 .logo').hover(function () {
             $(this).children('img').removeClass('grayscale')
@@ -194,8 +194,8 @@ $(function () {
             $(this).children('img').addClass('grayscale')
         });
 
-    }
-    if ($('.section19').size()) {
+    }*/
+   /* if ($('.section19').size()) {
         $('.section19 .policy').click(function () {
             $('#policy').remove();
             $('body').append('<div id="policy">\n\
@@ -248,7 +248,7 @@ $(function () {
             $('body').addClass('modal');
 
         }
-    })
+    })*/
 //    $('body').on('click', '.img_do', function () {
 //        if ($(this).parent().parent().children('.extra_info_block_wrapper').eq($(this).data('id')).is(':visible')) {
 //            $(this).parent().parent().children('.extra_info_block_wrapper').hide();
@@ -259,7 +259,7 @@ $(function () {
 //
 //        }
 //    })
-    $('body').on('click', '.extra_info_block .close', function () {
+   /* $('body').on('click', '.extra_info_block .close', function () {
         $(this).parent().parent().hide();
         $('body').removeClass('modal');
 
@@ -308,7 +308,7 @@ $(function () {
             }
         });
     }
-
+*/
     if ($('.section41 .overlay_image_box, .section42 .overlay_image_box, .section43 .overlay_image_box, .section44 .overlay_image_box, .section45 .overlay_image_box, .section46 .overlay_image_box, .section47 .overlay_image_box, .section48 .overlay_image_box').size()) {
         $('.section41 .overlay_image_box, .section42 .overlay_image_box, .section43 .overlay_image_box, .section44 .overlay_image_box, .section45 .overlay_image_box, .section46 .overlay_image_box, .section47 .overlay_image_box, .section48 .overlay_image_box').click(function () {
 
@@ -1002,26 +1002,6 @@ $(function () {
                     if(typeof(window.tobiz.basket_conf.basket_comment)!=='undefined'){
                         $('#basket_right form').append('<div><textarea name="comment" placeholder="Комментарий" ></textarea></div>');
                     }    
-
-                
-                
-                    $('#basket_right form').append('<div><input style=" background-color:'+bc.basket_btn_color+'" type="submit" value="Оформить заказ" /></div>');
-                    $('#basket_right').append('<div id="basket_descr">'+bc.basket_descr+'</div>');
-            }else{
-                    // стандартная корзинка
-                    $('#basket_left').append('<div id="basket_form_itogo">Итого: <span>' + this.countSum() + '</span></div>');
-                    $('#basket_right').append('<div id="basket_title">Оформить заказ</div>');
-                    $('#basket_right').append('<div id="basket_make_order"><form action="handler.php" enctype="multipart/form-data" method="post">\n\
-                                <input type="hidden" name="action" value="basket" />\n\
-                                <input type="hidden" name="amount" value="' + self.countSum() + '" />\n\
-                                <div><input type="text" name="email" required="required" placeholder="Введите E-mail" /></div>\n\
-                                <div><input type="text" name="tel"  required="required" placeholder="Введите телефон" /></div>\n\
-                                <div><textarea name="comment" placeholder="Адрес доставки (комментарий)" ></textarea></div>\n\
-                                <div><textarea name="order" style="display:none">' + JSON.stringify(self.getData()) + '</textarea></div>\n\
-                                <div><input type="submit" value="Оформить заказ" /></div>\n\
-                            </form></div>');
-                    $('#basket_make_order form').append('<div id="basket_continue">Продолжить покупки</div>');                
-
 
             }
             this.init();

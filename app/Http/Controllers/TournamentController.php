@@ -33,12 +33,14 @@ class TournamentController extends Controller
     public function storeParticipant(Request $request){
 
         $data = $request->all();
-        dd($data);
+
         Validator::make($request->all(), [
             'g-recaptcha-response' => new Captcha(),
         ])->validate();
+        $data['turn_id'] = Tournament::get()->last()->id;
+        //dd($data);
         $participant = new Participant();
         $participant->create($data);
-        return redirect()->back();//->json(['message' => 'success']);
+        return redirect()->back()->with('message', 'success');
     }
 }

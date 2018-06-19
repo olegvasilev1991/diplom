@@ -7,8 +7,7 @@
     <script src="/js/underscore-min.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css?ver=1522672390">
-    <script type="text/javascript"
-            src="/js/script.js?v=1522672961"></script> {{-- <script type="text/javascript">tobiz.blocks = [];</script>--}}
+    <script type="text/javascript" src="/js/script.js?v=1522672961"></script> {{-- <script type="text/javascript">tobiz.blocks = [];</script>--}}
     <link href="/css/mobile.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/flipclock.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -36,13 +35,11 @@
             clock.setTime({{ $time }});
 
             clock.start();
-
+            if({{$errors->has('g-recaptcha-response')}}) {
+                $('.popup_form').show();
+            }
         });
 
-       /* $(document).ready(function(){
-
-                $(".popup_thanks").show();
-        });*/
     </script>
 
     <style id="page_style">
@@ -81,66 +78,6 @@
                 <div class="clear"></div>
             </div>
             <div class="clear"></div>
-
-            <div class="popup_form">
-                <div class="popup_form_inner">
-                    <div class="popup_form_close">X</div>
-                    <div class="popup_form_title">Заявка для участі в турнірі</div>
-                    <form action="handler.php" enctype="multipart/form-data" method="post">
-                        <div class="form1"><input type="hidden" name="Название формы" value="">
-                            <div class="field">
-                                <div class="field_title">Ім'я</div>
-                                <div class="field_description"></div>
-                                <div class="field_input"><input type="text" required="required" name="first_name"
-                                                                placeholder="Ведіть ім'я"></div>
-                            </div>
-                            <div class="field">
-                                <div class="field_title">Прізвище</div>
-                                <div class="field_description"></div>
-                                <div class="field_input"><input type="text" required="required" name="last_name"
-                                                                placeholder="Ведіть прізвище"></div>
-                            </div>
-                            <div class="field">
-                                <div class="field_title">Стать</div>
-                                <div class="field_description"></div>
-                                <div class="field_input"><select>
-                                        <option>Чоловіча</option>
-                                        <option>Жіноча</option>
-                                    </select></div>
-                            </div>
-                            <div class="field">
-                                <div class="field_title">Ведіть E-mail</div>
-                                <div class="field_description"></div>
-                                <div class="field_input"><input type="text" required="required" name="email"
-                                                                placeholder="Ведіть E-mail"></div>
-                            </div>
-                            <div class="field">
-                                <div class="field_title">Ведіть номер телефону</div>
-                                <div class="field_description"></div>
-                                <div class="field_input"><input type="text" required="required"
-                                                                name="Введите номер телефона"
-                                                                placeholder="Ведіть номер телефону"></div>
-                            </div>
-                            <div class="field">
-                                <div class="field_input"><input type="submit" class="submit_btn surround"
-                                                                data-action="thanks" data-url="" data-amount="0"
-                                                                value="Зареєструватись"
-                                                                style="background-color:#3F7B16;    border-radius: 0.3em; ;  box-shadow: 0; ">
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="popup_thanks">
-                <div class="popup_thanks_inner">
-                    <div class="popup_thanks_close">X</div>
-                    <div class="popup_thanks_title">Дякую за заявку!</div>
-                    <div class="popup_thanks_text">Заявка відправлена. З вами зв'яжуться в ближайший час</div>
-                </div>
-            </div>
-
         </div>
     </div>
 
@@ -182,12 +119,12 @@
                                 <div class="field_input"><input type="text" required="required" name="last_name"
                                                                 placeholder="Ведіть прізвище"></div>
                             </div>
-                            <div class="field" style="text-align: center;">
+                            <div class="field">
                                 <div class="field_title">Стать</div>
                                 <div class="field_description"></div>
-                                <div class="field_input"><select>
-                                        <option>Чоловіча</option>
-                                        <option>Жіноча</option>
+                                <div class="field_input"><select name="sex">
+                                        <option value="0">Чоловіча</option>
+                                        <option value="1">Жіноча</option>
                                     </select></div>
                             </div>
                             <div class="field">
@@ -223,7 +160,7 @@
                             <div class="field">
                                 <div class="field_input"><input type="submit" class="submit_btn surround"
                                                                 data-action="thanks" data-url="" data-amount="0"
-                                                                value="Зареєструватись"
+                                                                value="Зареєструватись" id="register"
                                                                 style="background-color:#3F7B16;    border-radius: 0.3em; ;  box-shadow: 0; ">
                                 </div>
                             </div>
@@ -233,7 +170,7 @@
             </div>
 
 
-            <div class="popup_thanks show">
+            <div class="popup_thanks {{ (session('message') == 'success') ? 'show' : '' }}">
                 <div class="popup_thanks_inner">
                     <div class="popup_thanks_close">X</div>
                     <div class="popup_thanks_title">Дякую за заявку!</div>
@@ -326,6 +263,14 @@
                                                             placeholder="Ведіть прізвище"></div>
                         </div>
                         <div class="field">
+                            <div class="field_title">Стать</div>
+                            <div class="field_description"></div>
+                            <div class="field_input"><select>
+                                    <option value="0">Чоловіча</option>
+                                    <option value="1">Жіноча</option>
+                                </select></div>
+                        </div>
+                        <div class="field">
                             <div class="field_title">Дата народження</div>
                             <div class="field_description"></div>
                             <div class="field_input"><input type="date" required="required" name="birth"
@@ -358,7 +303,7 @@
                         <div class="field">
                             <div class="field_input"><input type="submit" class="submit_btn surround"
                                                             data-action="thanks" data-url="" data-amount="0"
-                                                            value="Зареєструватись"
+                                                            value="Зареєструватись" id="register"
                                                             style="background-color:#3F7B16;    border-radius: 0.3em; ;  box-shadow: 0; ">
                             </div>
                         </div>
@@ -510,6 +455,14 @@
                                                             placeholder="Ведіть прізвище"></div>
                         </div>
                         <div class="field">
+                            <div class="field_title">Стать</div>
+                            <div class="field_description"></div>
+                            <div class="field_input"><select>
+                                    <option value="0">Чоловіча</option>
+                                    <option value="1">Жіноча</option>
+                                </select></div>
+                        </div>
+                        <div class="field">
                             <div class="field_title">Дата народження</div>
                             <div class="field_description"></div>
                             <div class="field_input"><input type="date" required="required" name="birth"
@@ -542,7 +495,7 @@
                         <div class="field">
                             <div class="field_input"><input type="submit" class="submit_btn surround"
                                                             data-action="thanks" data-url="" data-amount="0"
-                                                            value="Зареєструватись"
+                                                            value="Зареєструватись" id="register"
                                                             style="background-color:#3F7B16;    border-radius: 0.3em; ;  box-shadow: 0; ">
                             </div>
                         </div>
