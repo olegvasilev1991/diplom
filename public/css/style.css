@@ -348,6 +348,9 @@ a.hidden.btn5{
     z-index: 108;
     color: #333;
 }
+.popup_thanks.show{
+    display:block;
+}
 
 .popup_thanks_inner{
     width: 400px;

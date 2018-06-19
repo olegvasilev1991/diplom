@@ -106,6 +106,7 @@ $(function () {
     $('body').on('click', '.popup_thanks_close, .popup_form_close', function () {
         $('.popup_thanks').hide();
         $('.popup_form').hide();
+        $('.popup_form').removeClass('show');
     });
     $('body').on('click', '.section1009 .widget_form_close', function () {
         $('.section1009 .form_wrapper').hide();

@@ -233,7 +233,7 @@
             </div>
 
 
-            <div class="popup_thanks">
+            <div class="popup_thanks show">
                 <div class="popup_thanks_inner">
                     <div class="popup_thanks_close">X</div>
                     <div class="popup_thanks_title">Дякую за заявку!</div>
