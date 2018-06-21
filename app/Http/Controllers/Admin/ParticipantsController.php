@@ -103,11 +103,14 @@ class ParticipantsController extends Controller
         $data = $request->all();
         $file = $request->file('photo');
 
-        Storage::put(
-            'public/avatars/'.$id.'.img',
-            file_get_contents($request->file('photo')->getRealPath())
-        );
-        $data['photo'] = Storage::url('public/avatars/'.$id.'.img');
+        if ($request->file('photo')) {
+            Storage::put(
+                'public/avatars/' . $id . '.img',
+                file_get_contents($request->file('photo')->getRealPath())
+            );
+            $data['photo'] = Storage::url('public/avatars/' . $id . '.img');
+        }
+        $data['turn_id'] = Tournament::get()->last()->id;
         $participant->update($data);
         return redirect('/admin/participants');
     }

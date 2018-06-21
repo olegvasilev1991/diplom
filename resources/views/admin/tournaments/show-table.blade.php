@@ -37,7 +37,7 @@
                                 @endfor
                                 <td>
                                     @if($participant->points->pluck('created_at')->last())
-                                    {{ $participant->points->pluck('created_at')->last()}}
+                                    {{ $participant->points->pluck('created_at')->last() }}
                                         @if($data->finish < $participant->points->pluck('created_at')->last())
                                             <br>вибув за часом
                                             @endif

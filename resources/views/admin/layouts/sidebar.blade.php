@@ -33,7 +33,7 @@
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="{{ route('admin.tournaments.index') }}"><i class="fa fa-flag"></i> <span>Турніри</span></a></li>
             <li class="active"><a href="{{ Route('admin.participants.index') }}"><i class="fa fa-users"></i> <span>Учасники</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Користувачі</span></a></li>
+           {{-- <li><a href="#"><i class="fa fa-link"></i> <span>Користувачі</span></a></li>
             <li class="treeview">
                 <a href="#"><i class="fa fa-link"></i> <span>Налаштування</span>
                     <span class="pull-right-container">
@@ -44,7 +44,7 @@
                     <li><a href="#">Link in level 2</a></li>
                     <li><a href="#">Link in level 2</a></li>
                 </ul>
-            </li>
+            </li>--}}
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
