@@ -51,7 +51,7 @@ class TournamentsController extends Controller
         );
         $test = $request->all();
 
-        $test['finish'] = date('Y-m-d H:i:s',strtotime($request->start) + 50*60);
+        $test['finish'] = date('Y-m-d H:i:s',strtotime($request->start) + $request->finish*60);
 
         $data = new Tournament();
 
