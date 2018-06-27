@@ -16,7 +16,7 @@ class CreatePointsTable extends Migration
         Schema::create('points', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('card_id')->unsigned();
-            $table->foreign('card_id')->references('id')->on('participants');
+            $table->foreign('card_id')->references('id')->on('participants')->onDelete('cascade');
             $table->integer('kp')->unsigned();
             $table->timestamps();
         });

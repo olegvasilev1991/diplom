@@ -18,7 +18,7 @@ class CreateParticipantsTable extends Migration
             $table->bigInteger('id_card')->unsigned()->nullable();
 
             $table->integer('turn_id')->unsigned();
-            $table->foreign('turn_id')->references('id')->on('tournaments');
+            $table->foreign('turn_id')->references('id')->on('tournaments')->onDelete('cascade');
 
             $table->char('first_name');
             $table->char('last_name');
